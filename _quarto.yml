@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "thesis"
+  title: "Thesis Title Here"
   author: "Ihsan E. Buker"
   date: "10/1/2022"
   chapters:
