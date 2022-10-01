@@ -3,7 +3,7 @@ project:
 
 book:
   title: "thesis"
-  author: "Jane Doe"
+  author: "Ihsan E. Buker"
   date: "10/1/2022"
   chapters:
     - index.qmd
