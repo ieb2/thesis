@@ -8,7 +8,7 @@ book:
   chapters:
     - index.qmd
     - abstract.qmd
-    - summary.qmd
+    - background.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -19,5 +19,5 @@ format:
   pdf:
     documentclass: scrreprt
 
-
-
+nocite: |
+  @Wang_1998

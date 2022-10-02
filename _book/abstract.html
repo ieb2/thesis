@@ -15,6 +15,25 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -25,7 +44,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./background.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -100,7 +119,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -140,13 +159,18 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>Missing data is an issue ubiquitous in many fields of science. Today, multiple imputation (MI) is one of the most commonly utilized approaches to provide valid statistical inferences in the presence of missing data. Briefly, MI fills the missing cells in the original dataset by generating a series of plausible values based on an imputation model and, thereafter, creates multiple complete versions of the original dataset. Subsequently, the analysis model is applied to each imputed dataset, and the parameters of interest are pooled to accurately reflect the loss of information caused by the missing observations. Accompanying MI, however, is the issue of uncongeniality, which, imprecisely, occurs when the imputation model and the analysis model make different assumptions about the data. Not long after the conception of MI, Rubin’s accompanying set of rules to pool parameter estimates from the multiply imputed datasets was shown to produce biased point estimates under uncongeniality, which either led to under-coverage of confidence intervals for anti-conservative estimates of variance or over-coverage for conservative estimates. In response, certain combinations of MI and resampling methods have been proposed as robust variance estimators under uncongeniality; however, their main drawback, to this day, has been their associated computational cost. Moreover, bootstrapping, which is one of the most commonly utilized resampling methods alongside MI to obtain proper variance estimates, has its basis in asymptotic theory. As such, in small samples, which are frequently encountered in biological studies, the need for a computationally efficient variance estimator with statistically desirable properties remains.</p>
+<p>Missing data is an issue ubiquitous in many fields of science. Today, multiple imputation (MI) is one of the most commonly utilized approaches to provide valid statistical inferences in the presence of missing data. Briefly, MI fills the missing cells in the original dataset by generating a series of plausible values based on an imputation model and, thereafter, creates multiple complete versions of the original dataset. Subsequently, the analysis model is applied to each imputed dataset, and the parameters of interest are pooled to accurately reflect the loss of information caused by the missing observations. Accompanying MI, however, is the issue of uncongeniality, which, imprecisely, occurs when the imputation model and the analysis model make different assumptions about the data. Not long after the conception of MI, Rubin’s accompanying set of rules to pool parameter estimates from the multiply imputed datasets was shown to produce biased point estimates under uncongeniality, which led to under-coverage of confidence intervals for anti-conservative estimates of variance or over-coverage for conservative estimates. In response, certain combinations of MI and resampling methods have been proposed as robust variance estimators under uncongeniality; however, their main drawback, to this day, has been their associated computational cost. Moreover, bootstrapping, one of the most commonly utilized resampling methods alongside MI to obtain proper variance estimates, has its basis in asymptotic theory. As such, in small samples frequently encountered in biological studies, the need for a computationally efficient variance estimator with statistically desirable properties remains.</p>
 <p>In response, a jackknife variance estimator for multiply imputed outcome variables under uncongeniality for small sample sizes is proposed, which provides asymptotically unbiased point estimates with appropriate confidence interval coverage under uncongeniality. The performance of the proposed jackknife variance estimator is investigated using a Monte Carlo simulation study and compared to other methods in the literature. Accordingly, the recommendation to replace Rubin’s rules as the de facto standard in variance estimation with resampling-based robust variance estimators is made, particularly in light of the modern computational power statistical practitioners have at their disposal. Finally, an implementation of the proposed jackknife variance estimator in R is provided.</p>
 <section id="keywords" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="keywords"><span class="header-section-number">1.1</span> Keywords</h2>
 <p>Multiple imputation, uncongeniality, model misspecification, jackknife resampling</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-Wang_1998" class="csl-entry" role="doc-biblioentry">
+Wang, N. 1998. <span>“Large-Sample Theory for Parametric Multiple Imputation Procedures.”</span> <em>Biometrika</em> 85 (4): 935–48. <a href="https://doi.org/10.1093/biomet/85.4.935">https://doi.org/10.1093/biomet/85.4.935</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -254,8 +278,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./background.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
