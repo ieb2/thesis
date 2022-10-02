@@ -4,7 +4,7 @@
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "See Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "In response, a jackknife variance estimator for multiply imputed outcome variables under uncongeniality for small sample sizes is proposed, which provides asymptotically unbiased point estimates with appropriate confidence interval coverage under uncongeniality."
   },
   {
     "objectID": "summary.html",
@@ -19,5 +19,19 @@
     "title": "References",
     "section": "",
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study",
+    "section": "",
+    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "abstract.html",
+    "href": "abstract.html",
+    "title": "1  Abstract",
+    "section": "",
+    "text": "In response, a jackknife variance estimator for multiply imputed outcome variables under uncongeniality for small sample sizes is proposed, which provides asymptotically unbiased point estimates with appropriate confidence interval coverage under uncongeniality. The performance of the proposed jackknife variance estimator is investigated using a Monte Carlo simulation study and compared to other methods in the literature. Accordingly, the recommendation to replace Rubin’s rules as the de facto standard in variance estimation with resampling-based robust variance estimators is made, particularly in light of the modern computational power statistical practitioners have at their disposal. Finally, an implementation of the proposed jackknife variance estimator in R is provided."
   }
 ]

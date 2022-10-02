@@ -2,12 +2,12 @@ project:
   type: book
 
 book:
-  title: "Thesis Title Here"
+  title: "Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study"
   author: "Ihsan E. Buker"
   date: "10/1/2022"
   chapters:
     - index.qmd
-    - intro.qmd
+    - abstract.qmd
     - summary.qmd
     - references.qmd
 
