@@ -175,7 +175,7 @@ div.csl-indent {
 <p>Finally, the point estimate is obtained by</p>
 <p><span class="math display">\[\hat{\theta} = m^{-1}\sum^m_{i = 1} \hat{\theta^*}_i\]</span></p>
 <p>and the variance is obtained by</p>
-<p><span class="math display">\[\text{var}(\hat{\theta}) = m^{-1}\sum^m_{i = 1} \left(\hat{\theta^*}_i - \overline{\hat{\theta^*}_i}\right)^2\]</span></p>
+<p><span class="math display">\[\text{var}(\hat{\theta}) = m^{-1}\sum^m_{i = 1} \left(\hat{\theta^*}_i - \hat{\theta}\right)^2\]</span></p>
 <p>Since Efron’s proposal of the non-parametric bootstrap, statisticians have widely utilized it thanks to its ease of implementation and the rapidly increasing computational power available to statistical practitioners. However, the properties of bootstrap resampling have their basis in the asymptotic theory, which holds in large sample sizes. The minimum sample size required to utilize bootstrap resampling and obtain asymptotically unbiased estimates is highly context-dependent; in certain situations, a minimum sample size of <span class="math inline">\(n = 200\)</span> has been suggested, with other authors suggesting between <span class="math inline">\(n = 100\)</span> to <span class="math inline">\(n = 500\)</span>. Given that in many biological studies, the minimum sample size required for asymptotically unbiased estimates may not be achieved, jackknife resampling, a method that predates the bootstrap, may be considered.</p>
 </section>
 <section id="jackknife-resampling" class="level2" data-number="2.2">
@@ -184,7 +184,7 @@ div.csl-indent {
 <p>Finally, the point estimate is obtained by</p>
 <p><span class="math display">\[\hat{\theta} = n^{-1}\sum^n_{i = 1} \hat{\theta^*}_i\]</span></p>
 <p>and the variance is obtained by</p>
-<p><span class="math display">\[\text{var}(\hat{\theta}) = n^{-1}\sum^n_{i = 1} \left(\hat{\theta^*}_i - \overline{\hat{\theta^*}_i}\right)^2\]</span></p>
+<p><span class="math display">\[\text{var}(\hat{\theta}) = n^{-1}\sum^n_{i = 1} \left(\hat{\theta^*}_i - \hat{\theta}\right)^2\]</span></p>
 </section>
 <section id="comparison-of-jackknife-and-bootstrap-resampling" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="comparison-of-jackknife-and-bootstrap-resampling"><span class="header-section-number">2.3</span> Comparison of Jackknife and Bootstrap Resampling</h2>
