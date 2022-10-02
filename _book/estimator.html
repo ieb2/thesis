@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study - 1&nbsp; Abstract</title>
+<title>Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study - 3&nbsp; The Proposed Jackknife Estimator</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -44,8 +44,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./background.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./background.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -84,7 +84,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -114,7 +114,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./abstract.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></a>
+  <a href="./abstract.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -124,7 +124,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimator.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></a>
+  <a href="./estimator.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -137,20 +137,14 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#keywords" id="toc-keywords" class="nav-link active" data-scroll-target="#keywords"> <span class="header-section-number">1.1</span> Keywords</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></h1>
 </div>
 
 
@@ -164,11 +158,31 @@ div.csl-indent {
 
 </header>
 
-<p>Missing data is an issue ubiquitous in many fields of science. Today, multiple imputation (MI) is one of the most commonly utilized approaches to provide valid statistical inferences in the presence of missing data. Briefly, MI fills the missing cells in the original dataset by generating a series of plausible values based on an imputation model and, thereafter, creates multiple complete versions of the original dataset. Subsequently, the analysis model is applied to each imputed dataset, and the parameters of interest are pooled to accurately reflect the loss of information caused by the missing observations. Accompanying MI, however, is the issue of uncongeniality, which, imprecisely, occurs when the imputation model and the analysis model make different assumptions about the data. Not long after the conception of MI, Rubin’s accompanying set of rules to pool parameter estimates from the multiply imputed datasets was shown to produce biased point estimates under uncongeniality, which led to under-coverage of confidence intervals for anti-conservative estimates of variance or over-coverage for conservative estimates. In response, certain combinations of MI and resampling methods have been proposed as robust variance estimators under uncongeniality; however, their main drawback, to this day, has been their associated computational cost. Moreover, bootstrapping, one of the most commonly utilized resampling methods alongside MI to obtain proper variance estimates, has its basis in asymptotic theory. As such, in small samples frequently encountered in biological studies, the need for a computationally efficient variance estimator with statistically desirable properties remains.</p>
-<p>In response, a jackknife variance estimator for multiply imputed outcome variables under uncongeniality for small sample sizes is proposed, which provides asymptotically unbiased point estimates with appropriate confidence interval coverage under uncongeniality. The performance of the proposed jackknife variance estimator is investigated using a Monte Carlo simulation study and compared to other methods in the literature. Accordingly, the recommendation to replace Rubin’s rules as the de facto standard in variance estimation with resampling-based robust variance estimators is made, particularly in light of the modern computational power statistical practitioners have at their disposal. Finally, an implementation of the proposed jackknife variance estimator in R is provided.</p>
-<section id="keywords" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="keywords"><span class="header-section-number">1.1</span> Keywords</h2>
-<p>Multiple imputation, uncongeniality, model misspecification, jackknife resampling</p>
+<pre class="algorithm"><code>% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
+\begin{algorithm}
+\caption{Quicksort}
+\begin{algorithmic}
+\PROCEDURE{Quicksort}{$A, p, r$}
+    \IF{$p &lt; r$} 
+        \STATE $q = $ \CALL{Partition}{$A, p, r$}
+        \STATE \CALL{Quicksort}{$A, p, q - 1$}
+        \STATE \CALL{Quicksort}{$A, q + 1, r$}
+    \ENDIF
+\ENDPROCEDURE
+\PROCEDURE{Partition}{$A, p, r$}
+    \STATE $x = A[r]$
+    \STATE $i = p - 1$
+    \FOR{$j = p$ \TO $r - 1$}
+        \IF{$A[j] &lt; x$}
+            \STATE $i = i + 1$
+            \STATE exchange
+            $A[i]$ with $A[j]$
+        \ENDIF
+        \STATE exchange $A[i]$ with $A[r]$
+    \ENDFOR
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}</code></pre>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -176,7 +190,6 @@ div.csl-indent {
 Wang, N. 1998. <span>“Large-Sample Theory for Parametric Multiple Imputation Procedures.”</span> <em>Biometrika</em> 85 (4): 935–48. <a href="https://doi.org/10.1093/biomet/85.4.935">https://doi.org/10.1093/biomet/85.4.935</a>.
 </div>
 </div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -260,13 +273,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./background.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./background.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

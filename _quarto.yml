@@ -9,6 +9,7 @@ book:
     - index.qmd
     - abstract.qmd
     - background.qmd
+    - estimator.qmd
     - references.qmd
 
 bibliography: references.bib
