@@ -1,2 +1,3 @@
-# The Proposed Jackknife Estimator 
+# The Proposed Jackknife Estimator
 
+![A pseudocode depiction of the proposed jackknife estimator.](Algorithm_for_jackknife_estimator.jpg){fig-align="center"}
