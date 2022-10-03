@@ -1,3 +1,2 @@
 # The Proposed Jackknife Estimator 
 
-test for cleanup
