@@ -75,6 +75,7 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -158,12 +159,23 @@ div.csl-indent {
 
 </header>
 
+<p>A pseudocode overview of the jackknife estimator proposed may be seen in the following figure.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Algorithm_for_jackknife_estimator.jpg" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">A pseudocode depiction of the proposed jackknife estimator.</figcaption><p></p>
 </figure>
 </div>
+<p>As part of the algorithm, researchers must choose values <span class="math inline">\(k\)</span> and <span class="math inline">\(j\)</span>, which will be context-dependent quantities. Ideally, a <span class="math inline">\(k\)</span> value which satisfies <span class="math inline">\(\frac{\sqrt{n}}{k} \rightarrow 0\)</span> will provide asymptotically unbiased estimates even for non-smooth statistics. Rewriting the foregoing condition for <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[
+\begin{align}
+  &amp;\frac{\sqrt{n}}{k} \rightarrow \ 0 \\
+  &amp;\implies k &gt;&gt; \sqrt{n} \\
+  &amp;\text{Since} \ k \leq n \\
+  &amp;\implies n \geq k &gt;&gt; \sqrt{n}
+\end{align}
+\]</span></p>
+<p>It is evident that <span class="math inline">\(k\)</span> should take on some value between <span class="math inline">\(n\)</span> and <span class="math inline">\(\sqrt{n}\)</span> with <span class="math inline">\(k\)</span> being closer to <span class="math inline">\(n\)</span>, particulary for non-smooth statistics. At any rate, <span class="math inline">\(j = \binom{n}{k}\)</span> will likely be a value that is not computationally feasible to obtain. Again, the number of subsamples required, <span class="math inline">\(j\)</span>, can be limited to yield the estimator more accessible. The choice of <span class="math inline">\(j\)</span> will be a multifaceted decision, where higher values are ideal. Ideally, a small pilot value may be performed with a range of <span class="math inline">\(j\)</span> values to determine values of <span class="math inline">\(j\)</span> for which estimates begin to converge.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
