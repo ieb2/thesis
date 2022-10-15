@@ -5,6 +5,7 @@ book:
   title: "Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study"
   chapters:
     - index.qmd
+    - acknowledgments.qmd
     - abstract.qmd
     - background.qmd
     - estimator.qmd

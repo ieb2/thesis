@@ -4,7 +4,14 @@
     "href": "index.html",
     "title": "Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study",
     "section": "",
-    "text": "A Thesis\n\n\nPresented to the Department of Mathematics and Statistics\n\n\nHal Marcus College of Science and Engineering\n\n\nand\n\n\nThe Kugelman Honors Program\n\n\nof\n\n\nThe University of West Florida\n\n\n\n\n\n\n\nIn partial fulfillment of the requirements for graduation as a Kugelman Honors Scholar\n\n\n\n\n\n\n\nWang, N. 1998. “Large-Sample Theory for Parametric Multiple Imputation Procedures.” Biometrika 85 (4): 935–48. https://doi.org/10.1093/biomet/85.4.935."
+    "text": "A Thesis\n\n\nPresented to the Department of Mathematics and Statistics\n\n\nHal Marcus College of Science and Engineering\n\n\nand\n\n\nThe Kugelman Honors Program\n\n\nof\n\n\nThe University of West Florida\n\n\n\n\n\n\n\nIn partial fulfillment of the requirements for graduation as a Kugelman Honors Scholar\n\n\n\n\n\n\n\n\n\n\nIhsan E. Buker\n\n\nNovember, 2022\n\n\n\n\n\n\n\n\nWang, N. 1998. “Large-Sample Theory for Parametric Multiple Imputation Procedures.” Biometrika 85 (4): 935–48. https://doi.org/10.1093/biomet/85.4.935."
+  },
+  {
+    "objectID": "acknowledgments.html",
+    "href": "acknowledgments.html",
+    "title": "Acknowledgments",
+    "section": "",
+    "text": "Wang, N. 1998. “Large-Sample Theory for Parametric Multiple Imputation Procedures.” Biometrika 85 (4): 935–48. https://doi.org/10.1093/biomet/85.4.935."
   },
   {
     "objectID": "abstract.html",
@@ -67,7 +74,7 @@
     "href": "estimator.html#theoretical-basis-of-the-proposed-estimator",
     "title": "3  The Proposed Jackknife Estimator",
     "section": "3.1 Theoretical Basis of the Proposed Estimator",
-    "text": "3.1 Theoretical Basis of the Proposed Estimator\nSeveral contrasts may be noted compared to similar estimators proposed for variance estimation in multiply imputed datasets. The use of jackknife subsamples as opposed to bootstrap subsamples (i.e., subsamples constructed without replacement vs. those constructed with replacement), imputing the jackknifed subsamples, as opposed to jackknifing the imputed datasets and trimming the point estimates prior to obtaining the point estimate and the bounds of the percentile confidence interval. Each of the aforementioned contrasts will be addressed in the following subsections.\n\n3.1.1 Jackknife vs. Bootstrap Subsamples\n\n\n3.1.2 Order of Impuation and Subsapling\n\n\n3.1.3 Generation of the Confidence Interval\n\n\n\n\nWang, N. 1998. “Large-Sample Theory for Parametric Multiple Imputation Procedures.” Biometrika 85 (4): 935–48. https://doi.org/10.1093/biomet/85.4.935."
+    "text": "3.1 Theoretical Basis of the Proposed Estimator\n\n3.1.1 Jackknife vs. Bootstrap Subsamples\n\n\n3.1.2 Order of Impuation and Subsapling\n\n\n3.1.3 Generation of the Confidence Interval\n\n\n\n\nWang, N. 1998. “Large-Sample Theory for Parametric Multiple Imputation Procedures.” Biometrika 85 (4): 935–48. https://doi.org/10.1093/biomet/85.4.935."
   },
   {
     "objectID": "references.html",
