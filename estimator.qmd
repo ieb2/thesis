@@ -18,3 +18,13 @@ $$
 $$
 
 It is evident that $d$ should take on some value between $n$ and $\sqrt{n}$ with $d$ being closer to $n$, particulary for non-smooth statistics. At any rate, $j = \binom{n}{d}$ will likely be a value that is not computationally feasible to obtain. Again, the number of subsamples required, $j$, can be limited to yield the estimator more accessible. The choice of $j$ will be a multifaceted decision, where, if possible, greater values are preferred. Ideally, a small pilot study may be performed with a range of $j$ values to determine values of $j$ for which estimates begin to converge.
+
+## Theoretical Basis of the Proposed Estimator 
+
+Several contrasts may be noted compared to similar estimators proposed for variance estimation in multiply imputed datasets. The use of jackknife subsamples as opposed to bootstrap subsamples (i.e., subsamples constructed without replacement vs. those constructed with replacement), imputing the jackknifed subsamples, as opposed to jackknifing the imputed datasets and trimming the point estimates prior to obtaining the point estimate and the bounds of the percentile confidence interval. Each of the aforementioned contrasts will be addressed in the following subsections. 
+
+### Jackknife vs. Bootstrap Subsamples 
+
+### Order of Impuation and Subsapling 
+
+### Generation of the Confidence Interval
