@@ -22,6 +22,8 @@ Since Efron's proposal of the non-parametric bootstrap, statisticians have widel
 
 ## Jackknife Resampling
 
+### Leave-One-Out Jackknife
+
 Let $q$ be the set of observations $\left(z_1, z_2, z_3, \dots, z_n \right)$ from the population $Q$ such that $z_i \ \forall \ i \in \{1, 2, 3, \dots, n\}$ is an i.i.d sample from $Q$. Moreover, let $\theta$ be some parameter of interest, with the unbiased estimator $\hat{\theta}$, which is a statistic computed from $F(q)$. Finally, let $G_{\theta}$ be the sampling distribution of $F(q)$. The jackknife, as proposed by Quenouille and expanded on by Tukey, creates $n$ leave-one-out subsamples from $q$ such that $q_{-1} = \left(z_2, z_3, z_4, \dots, z_n \right),$ $q_{-2} = \left(z_1, z_3, z_4, \dots, z_n \right), \dots, q_{-n} = \left(z_1, z_2, z_3, \dots, z_{n-1} \right)$ and $\lvert q_{-i}\rvert = n-1 \ \forall i \in \{1, 2, 3, \dots, n\}$. Thereafter, the statistic of interest $\hat{\theta}$ is calculated by applying $F(q_i) \ \forall \ i \in \{1, 2, 3, \dots, n\}$, which results in $\hat{\theta^*}_1, \hat{\theta^*}_2, \hat{\theta^*}_3, \dots, \hat{\theta^*}_m$.
 
 Finally, the point estimate is obtained by
@@ -32,9 +34,21 @@ and the variance is obtained by
 
 $$\text{var}(\hat{\theta}) = n^{-1}\sum^n_{i = 1} \left(\hat{\theta^*}_i - \hat{\theta}\right)^2$$
 
+### Delete-*d* Jackknife
+
+The delete-*d* jackknife may be seen as a generalized version of the traditional jackknife (hereinafter, jackknife). Although in many situations, the jackknife provides a computationally efficient means to estimate the variance of an estimator, for non-smooth statistics, such as the percentiles of the data, the jackknife fails, as the statistic varies significantly between any two subsamples. In such cases, the delete-*d* jackknife provides an alternative estimator that can provide asymptotically unbiased estimates for non-smooth statistics. Similarly, let $q$ be the set of observations $\left(z_1, z_2, z_3, \dots, z_n \right)$ from the population $Q$ such that $z_i \ \forall \ i \in \{1, 2, 3, \dots, n\}$ is an i.i.d sample from $Q$. Moreover, let $\theta$ be some parameter of interest, with the unbiased estimator $\hat{\theta}$, which is a statistic computed from $F(q)$. Finally, let $G_{\theta}$ be the sampling distribution of $F(q)$. The delete-*d* jackknife, creates $n \choose d$ subsamples of $q$ such that $\lvert q_i \rvert = n-d$ Thereafter, the statistic of interest $\hat{\theta}$ is calculated by applying $F(q_i) \ \forall \ i \in \{1, 2, 3, \dots, {n \choose d} \}$, which results in $\hat{\theta^*}_1, \hat{\theta^*}_2, \hat{\theta^*}_3, \dots, \hat{\theta^*}_{n \choose d}$. In many cases, however, $n \choose d$ is a large value that yields this approach computationally unfeasible. In such instances, certain guidelines, as discussed in following chapters, may be employed to determine a value of subsamples that still provide proper estimates.
+
+Finally, the point estimate is obtained by
+
+$$\hat{\theta} = {n \choose d}^{-1}\sum^{n \choose d}_{i = 1} \hat{\theta^*}_i$$
+
+and the variance is obtained by
+
+$$\text{var}(\hat{\theta}) = {n \choose d}^{-1}\sum^{n \choose d}_{i = 1} \left(\hat{\theta^*}_i - \hat{\theta}\right)^2$$
+
 ## Comparison of Jackknife and Bootstrap Resampling
 
-Given their comparable construction and application, the jackknife and bootstrap make similar assumptions regarding the data. Most notably, both assume that the function used to estimate the parameter is smooth. Formally, a smooth function is defined as one that has continuous derivatives over some domain, with the minimum number of derivatives required to be considered smooth varying per the question at hand. From a statistical perspective, if the function used to estimate the parameter is smooth on some domain $(a, b)$, $[F(q_i) - F(q_z)] \rightarrow 0$ as $\lvert q_i - q_z\rvert \rightarrow 0$. Meaning, among a set of conceivable, non-identical samples from the population, minor differences between possible samples will only result in minor differences between the statistic estimated. Due to its deterministic nature, the jackknife tends to perform poorly in estimating non-smooth statistics. However, its deterministic nature also yields the jackknife superior to bootstrapping in smaller datasets. To combat the issue regarding non-smooth statistics, a generalized jackknife resampling scheme, called the *drop-d-jackknife* has been proposed, which was utilized in this estimator. 
+Given their comparable construction and application, the jackknife and bootstrap make similar assumptions regarding the data. Most notably, both assume that the function used to estimate the parameter is smooth. Formally, a smooth function is defined as one that has continuous derivatives over some domain, with the minimum number of derivatives required to be considered smooth varying per the question at hand. From a statistical perspective, if the function used to estimate the parameter is smooth on some domain $(a, b)$, $[F(q_i) - F(q_z)] \rightarrow 0$ as $\lvert q_i - q_z\rvert \rightarrow 0$. Meaning, among a set of conceivable, non-identical samples from the population, minor differences between possible samples will only result in minor differences between the statistic estimated. Due to its deterministic nature, the jackknife tends to perform poorly in estimating non-smooth statistics. However, its deterministic nature also yields the jackknife superior to bootstrapping in smaller datasets. To combat the issue regarding non-smooth statistics, a generalized jackknife resampling scheme, called the *drop-d-jackknife* has been proposed, which was utilized in this estimator.
 
 ## Multiple Imputation
 
