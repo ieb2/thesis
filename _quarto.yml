@@ -3,22 +3,24 @@ project:
 
 book:
   title: "Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study"
-  author: "Ihsan E. Buker"
-  date: "10/1/2022"
   chapters:
     - index.qmd
     - abstract.qmd
     - background.qmd
     - estimator.qmd
     - references.qmd
+  sidebar: 
+    title: " "
 
 bibliography: references.bib
 
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
+    toc: true
+    code-fold: true
+    code-overflow: wrap
+    
 
 nocite: |
   @Wang_1998
