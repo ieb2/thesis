@@ -47,7 +47,7 @@ reshape2::melt(combined_results[c("point_estimate_rub", "point_estimate", "point
 
 # Zipper plot for srs of n = 100, too dense otherwise
 set.seed(234)
-combined_results %>%
+jackk <- combined_results %>%
   sample_n(1e2, replace = FALSE) %>%
   mutate(covers = ifelse(UB > true_var & true_var > LB, "Covers", "Does Not Cover")) %>%
   ggplot(., aes(x = 1:100)) + 
@@ -63,7 +63,7 @@ combined_results %>%
   ggtitle("Jackknife Estimator")
 
 set.seed(234)
-combined_results %>%
+boot <- combined_results %>%
   sample_n(1e2, replace = FALSE) %>%
   mutate(covers = ifelse(UB_boot > true_var & true_var > LB_boot, "Covers", "Does Not Cover")) %>%
   ggplot(., aes(x = 1:100)) + 
@@ -79,7 +79,7 @@ combined_results %>%
   ggtitle("Bootstrap Estimator")
 
 set.seed(234)
-combined_results %>%
+rubin <- combined_results %>%
   sample_n(1e2, replace = FALSE) %>%
   mutate(covers = ifelse(UB_rub > true_var & true_var > LB_rub, "Covers", "Does Not Cover")) %>%
   ggplot(., aes(x = 1:100)) + 

@@ -1,0 +1,169 @@
+# Results
+
+```{r, include=FALSE}
+library(tidyverse)
+library(ggpubr)
+
+combined_results <- read_csv("final_sim_data_agg.csv") %>%
+  select(-"...1")
+
+benchmark_res <- read.csv("benchmark_detailed_res.csv") %>%
+  select(-X) %>%
+  group_by(expr) %>%
+  summarise("Mean Time (seconds/iteration)" = mean(time)/1e6/100, 
+            "Median Time (seconds/iteration)" = median(time)/1e6/100, 
+            "SD of Time (seconds/iteration)" = sd(time)/1e6/100) %>%
+  rename("Method" = expr)
+
+benchmark_res_ord <- benchmark_res[c(2,1,3),] 
+
+jackknife_coverage <- 
+  round((sum(combined_results$true_var < combined_results$UB &
+               combined_results$true_var > combined_results$LB) / nrow(combined_results))*100,2)
+
+rubin_coverage <- 
+  round((sum(combined_results$true_var < combined_results$UB_rub &
+               combined_results$true_var > combined_results$LB_rub) / nrow(combined_results))*100,2)
+
+boot_coverage <- 
+  round((sum(combined_results$true_var < combined_results$UB_boot &
+               combined_results$true_var > combined_results$LB_boot) / nrow(combined_results))*100,2)
+
+ci_sum <- tibble(
+  "Method" = c("Jackknife", "Bootstrap", "Rubin's Rules"), 
+  
+  "Coverage Probability" = c(jackknife_coverage, rubin_coverage, boot_coverage), 
+  
+  "Median C.I. Width" = c(median(combined_results$jackknife_width), median(combined_results$boot_width), median(combined_results$rubin_width)), 
+  
+  "Mean C.I. Width" = c(mean(combined_results$jackknife_width), mean(combined_results$boot_width), mean(combined_results$rubin_width)), 
+  
+  "SD of C.I. Width" = c(sd(combined_results$jackknife_width), sd(combined_results$boot_width), sd(combined_results$rubin_width))
+)
+
+point_estimate_sum <- tibble(
+  "Method" = c("Jackknife", "Bootstrap", "Rubin's Rules"), 
+  
+  "Median Point Estimates " = c(median(combined_results$point_estimate), median(combined_results$point_estimate_boot), median(combined_results$point_estimate_rub)), 
+  
+  "Mean Point Estimates" = c(mean(combined_results$point_estimate), mean(combined_results$point_estimate_boot), mean(combined_results$point_estimate_rub)), 
+  
+  "SD of Point Estimates" = c(sd(combined_results$point_estimate), sd(combined_results$point_estimate_boot), sd(combined_results$point_estimate_rub))
+)
+
+set.seed(234)
+jackk <- combined_results %>%
+  sample_n(1e2, replace = FALSE) %>%
+  mutate(covers = ifelse(UB > true_var & true_var > LB, "Covers", "Does Not Cover")) %>%
+  ggplot(., aes(x = 1:100)) + 
+  geom_errorbar(aes(ymin = LB, ymax = UB, color = covers)) + 
+  theme_bw() + 
+  #coord_flip() + 
+  labs(
+    x = latex2exp::TeX("$i^{th} iteration"), 
+    y = "C.I."
+  ) + 
+  geom_hline(yintercept = combined_results$true_var) + 
+  scale_color_manual(name = NULL, values=c("#999999", "#FF0000")) + 
+  ggtitle("Jackknife Estimator") + 
+  xlim(c(0,100)) + 
+  ylim(c(-2.5,5))
+
+set.seed(24123)
+boot <- combined_results %>%
+  sample_n(1e2, replace = FALSE) %>%
+  mutate(covers = ifelse(UB_boot > true_var & true_var > LB_boot, "Covers", "Does Not Cover")) %>%
+  ggplot(., aes(x = 1:100)) + 
+  geom_errorbar(aes(ymin = LB_boot, ymax = UB_boot, color = covers)) + 
+  theme_bw() + 
+  #coord_flip() + 
+  labs(
+    x = latex2exp::TeX("$i^{th} iteration"), 
+    y = "C.I."
+  ) + 
+  geom_hline(yintercept = combined_results$true_var) + 
+  scale_color_manual(name = NULL, values=c("#999999", "#FF0000")) + 
+  ggtitle("Bootstrap Estimator") + 
+  xlim(c(0,100)) + 
+  ylim(c(-2.5,5))
+
+set.seed(234)
+rubin <- combined_results %>%
+  sample_n(1e2, replace = FALSE) %>%
+  mutate(covers = ifelse(UB_rub > true_var & true_var > LB_rub, "Covers", "Does Not Cover")) %>%
+  ggplot(., aes(x = 1:100)) + 
+  geom_errorbar(aes(ymin = LB_rub, ymax = UB_rub, color = covers)) + 
+  theme_bw() + 
+  #coord_flip() + 
+  labs(
+    x = latex2exp::TeX("$i^{th} iteration"), 
+    y = "C.I."
+  ) + 
+  geom_hline(yintercept = combined_results$true_var) + 
+  scale_color_manual(name = NULL, values=c("#999999", "#FF0000")) + 
+  ggtitle("Rubin's Rules") + 
+  xlim(c(0,100)) + 
+  ylim(c(-2.5,5))
+
+point_dist <- reshape2::melt(combined_results[c("point_estimate_rub", "point_estimate", "point_estimate_boot")]) %>%
+  ggplot(data = .,
+         aes(x = value - 2, fill = variable, color = variable)) + 
+  geom_density(aes(y = ..density..), alpha = 0.25) + 
+  theme(axis.title.y = element_blank(), 
+        panel.spacing=unit(1.5,"lines")) + 
+  theme_bw() + 
+  theme(axis.title.y = element_blank(), 
+        panel.spacing=unit(1.5,"lines"), 
+        strip.text = element_text(
+          size = 9)) + 
+  labs(
+    x = latex2exp::TeX("$\\widehat{\\beta_1} - \\beta_1")
+  ) + 
+  scale_fill_discrete(name = "Method", labels = c("Rubin's Rules", "Jackknife", "Bootstrap")) + 
+  scale_color_discrete(name = "Method", labels = c("Rubin's Rules", "Jackknife", "Bootstrap"))
+
+benchmark_plot <- read.csv("benchmark_detailed_res.csv") %>%
+  select(-X) %>%
+  ggplot(., aes(x = expr, y = time/1e6/100)) + 
+  geom_violin() + 
+  scale_y_log10() + 
+  theme_bw() + 
+  ggtitle("Benchmark for Methods Examined") + 
+  coord_flip() + 
+  labs(
+    y = "Time (seconds/iteration)"
+  ) + 
+  theme(axis.title.y = element_blank())
+```
+
+## Overview of Simulation Results
+
+### Point Estimates
+```{r, warning=FALSE, echo = FALSE}
+point_estimate_sum
+```
+
+### Confidence Intervals 
+```{r, warning=FALSE, echo=FALSE}
+ci_sum
+```
+### Benchmark
+```{r, warning=FALSE, echo=FALSE}
+benchmark_res_ord
+```
+
+```{r, warning=FALSE, message=FALSE}
+benchmark_plot
+```
+
+
+## Distribution of Point Estimator Bias
+```{r, warning=FALSE, message=FALSE}
+point_dist
+```
+
+## Zipper Plots for Confidence Interval Coverage
+```{r}
+ggarrange(jackk, boot, rubin, ncol = 1, nrow = 3, common.legend = TRUE, legend="right")
+```
+

@@ -9,6 +9,7 @@ book:
     - abstract.qmd
     - background.qmd
     - estimator.qmd
+    - results.qmd
     - references.qmd
   sidebar: 
     title: " "
@@ -21,6 +22,7 @@ format:
     toc: true
     code-fold: true
     code-overflow: wrap
+    df-print: paged
     
 
 nocite: |
