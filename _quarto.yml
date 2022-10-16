@@ -11,6 +11,7 @@ book:
     - methods.qmd
     - estimator.qmd
     - results.qmd
+    - discussion.qmd
     - references.qmd
     - appendix.qmd
   sidebar: 
