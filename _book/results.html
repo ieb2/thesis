@@ -217,14 +217,14 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview-of-simulation-results" id="toc-overview-of-simulation-results" class="nav-link active" data-scroll-target="#overview-of-simulation-results"> <span class="header-section-number">4.1</span> Overview of Simulation Results</a>
+  <li><a href="#point-estimates" id="toc-point-estimates" class="nav-link active" data-scroll-target="#point-estimates"> <span class="header-section-number">4.1</span> Point Estimates</a>
   <ul class="collapse">
-  <li><a href="#point-estimates" id="toc-point-estimates" class="nav-link" data-scroll-target="#point-estimates"> <span class="header-section-number">4.1.1</span> Point Estimates</a></li>
-  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals"> <span class="header-section-number">4.1.2</span> Confidence Intervals</a></li>
-  <li><a href="#benchmark" id="toc-benchmark" class="nav-link" data-scroll-target="#benchmark"> <span class="header-section-number">4.1.3</span> Benchmark</a></li>
+  <li><a href="#sec-point" id="toc-sec-point" class="nav-link" data-scroll-target="#sec-point"> <span class="header-section-number">4.1.1</span> Summary of Point Estimation Properties</a></li>
+  <li><a href="#distribution-of-point-estimator-bias" id="toc-distribution-of-point-estimator-bias" class="nav-link" data-scroll-target="#distribution-of-point-estimator-bias"> <span class="header-section-number">4.1.2</span> Distribution of Point Estimator Bias</a></li>
+  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals"> <span class="header-section-number">4.1.3</span> Confidence Intervals</a></li>
+  <li><a href="#benchmark" id="toc-benchmark" class="nav-link" data-scroll-target="#benchmark"> <span class="header-section-number">4.1.4</span> Benchmark</a></li>
   </ul></li>
-  <li><a href="#distribution-of-point-estimator-bias" id="toc-distribution-of-point-estimator-bias" class="nav-link" data-scroll-target="#distribution-of-point-estimator-bias"> <span class="header-section-number">4.2</span> Distribution of Point Estimator Bias</a></li>
-  <li><a href="#zipper-plots-for-confidence-interval-coverage" id="toc-zipper-plots-for-confidence-interval-coverage" class="nav-link" data-scroll-target="#zipper-plots-for-confidence-interval-coverage"> <span class="header-section-number">4.3</span> Zipper Plots for Confidence Interval Coverage</a></li>
+  <li><a href="#zipper-plots-for-confidence-interval-coverage" id="toc-zipper-plots-for-confidence-interval-coverage" class="nav-link" data-scroll-target="#zipper-plots-for-confidence-interval-coverage"> <span class="header-section-number">4.2</span> Zipper Plots for Confidence Interval Coverage</a></li>
   </ul>
 </nav>
     </div>
@@ -247,10 +247,14 @@ div.csl-indent {
 
 </header>
 
-<section id="overview-of-simulation-results" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="overview-of-simulation-results"><span class="header-section-number">4.1</span> Overview of Simulation Results</h2>
-<section id="point-estimates" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="point-estimates"><span class="header-section-number">4.1.1</span> Point Estimates</h3>
+<p>Per the Methods section, the performance of the proposed jackknife estimator was compared to two leading methods in the literature, Rubin’s rules following multiple imputation and Bootstrap resamplin gprior to multiple imputation. The methods were compared concerning the coverage probabilities they generated, the widths of their respective confidence intervals, their computational expense, and the bias of their point estimators.</p>
+<section id="point-estimates" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="point-estimates"><span class="header-section-number">4.1</span> Point Estimates</h2>
+<p>All methods, perhaps with the exception of Rubin’s rules, produced reasonable point estimates with minimal bias. Rubin’s rules resulted in slightly anticonservative point estimates with greater standard deviation, indicative of a statistically inefficient estimator with high variability. This finding is unsurprising given the literature on Rubin’s rules and its performance under uncongeniality.</p>
+<p>In contrast, it is noted that both resampling methods examined provide nearly unbiased point estimates with smaller standard deviations compared to Rubin’s rules. Again, given the literature on uncongeniality, this finding was unsurprising; however, given the lack of both empirical and theoretical justification for the bootstrap approach in small sample sizes, the desirable properties noted are worthy of further examination. Between all three methods, nevertheless, it is noted that the proposed jackknife estimator produced estimates with the smallest amount of bias, as well as the smallest standard deviation, an observation perhaps better observed in FIGURE 2, where the distribution of the biases of the point estimates is compared. From the kernel density plots presented, it is evident that Rubin’s rules slightly underestimate the parameter. Compared to Rubin’s rules, both resampling approaches provide point estimates that are nearly unbiased; however, it is noted that the bootstrap estimates, despite being centered near zero, are slightly more dispersed compared to the jackknife estimates, which present as a narrow distribution centered at zero. This observation is justified by the values provided in TABLE 1 which demonstrate that the jackknife point estimates have a smaller standard deviation than the bootstrap approach and Rubin’s rules. <span class="quarto-unresolved-ref">?tbl-iris</span></p>
+<p>From a point estimation perspective, the statistically desirable properties of the jackknife estimator, alongside its theoretical and empirical justification when used with small sample sizes, yield it a desirable estimator. <a href="#sec-point"><span>Section&nbsp;4.1.1</span></a></p>
+<section id="sec-point" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="sec-point"><span class="header-section-number">4.1.1</span> Summary of Point Estimation Properties</h3>
 <div class="cell">
 <div class="cell-output-display">
 
@@ -262,8 +266,20 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="confidence-intervals" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="confidence-intervals"><span class="header-section-number">4.1.2</span> Confidence Intervals</h3>
+<section id="distribution-of-point-estimator-bias" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="distribution-of-point-estimator-bias"><span class="header-section-number">4.1.2</span> Distribution of Point Estimator Bias</h3>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>point_dist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="results_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="confidence-intervals" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="confidence-intervals"><span class="header-section-number">4.1.3</span> Confidence Intervals</h3>
 <div class="cell">
 <div class="cell-output-display">
 
@@ -275,8 +291,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="benchmark" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="benchmark"><span class="header-section-number">4.1.3</span> Benchmark</h3>
+<section id="benchmark" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="benchmark"><span class="header-section-number">4.1.4</span> Benchmark</h3>
 <div class="cell">
 <div class="cell-output-display">
 
@@ -290,28 +306,16 @@ div.csl-indent {
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>benchmark_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="results_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="distribution-of-point-estimator-bias" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="distribution-of-point-estimator-bias"><span class="header-section-number">4.2</span> Distribution of Point Estimator Bias</h2>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>point_dist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>benchmark_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="results_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="zipper-plots-for-confidence-interval-coverage" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="zipper-plots-for-confidence-interval-coverage"><span class="header-section-number">4.3</span> Zipper Plots for Confidence Interval Coverage</h2>
+</section>
+<section id="zipper-plots-for-confidence-interval-coverage" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="zipper-plots-for-confidence-interval-coverage"><span class="header-section-number">4.2</span> Zipper Plots for Confidence Interval Coverage</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
