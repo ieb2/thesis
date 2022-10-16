@@ -47,7 +47,7 @@ read_csv("final_sim_data_agg.csv") %>%
 
 ## Code 
 
-Please see our publicly available GitHub [repo](https://github.com/ieb2/jackknife_var_est.git) for the simulation code. Otherwise, the code utilized throught the paper has been included below. 
+Please see our publicly available GitHub [repo](https://github.com/ieb2/jackknife_var_est.git) for the simulation code. Otherwise, the code utilized through the paper has been included below. 
 
 ```{r, eval=FALSE}
 # Aggregated code here for organization, make it available in an appendix.
