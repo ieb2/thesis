@@ -1,0 +1,24 @@
+# Methods 
+
+For the proposed Monte Carlo simulation, $N$ = 10,000 datasets will be generated with the following characteristics: A response variable, $Y$, with $p_{miss} = 0.3$ proportion of missing observations, where the mechanism of missingness is missing at random (MAR), and an $n \times q$ matrix of fully observed covariates, where $n = 50$ is the sample size, and $q = 3$ is the number of covariates.  
+
+All generated datasets will be analysed using three approaches: 
+  * Bootstrap then multiply impute: The observed dataset with missing observations will initially be bootstrapped $n = 200$ times. Thereafter, each of the bootstrap samples will be imputed $m = 2$ times, with a maximum of $maxit = 5$ iterations. The mean of the bootstrap estimates will serve as the final point estimate, and a 95% confidence interval will be generated through the percentile method, where the $\alpha/2^{th}$ and $1-(\alpha/2)^{th}$ percentiles will be the lower and upper bounds, respectively. 
+
+  * Multiply impute then use Rubin's rules: The observed dataset with missing observations will be imputed $m = 10$ times, with a maximum of $maxit = 5$ iterations. The point estimate, as well as the confidence interval will be obtained through the following rules proposed by Donald Rubin. 
+
+\begin{align}
+\bar{\theta} &= \frac{1}{m}\left (\sum_{i=1}^m{\theta_i}\right ) \\ 
+
+V_{within} &= \frac{1}{m} \sum_{i=1}^m{SE_i^2} \\ 
+
+V_{between} &= \frac{\sum_{i=1}^m (\theta_i - \overline{\theta})^2}{m-1} \\ 
+
+V_{total} &= V_W + V_B + \frac{V_B}{m} \\ 
+
+\bar{\theta} &\pm t_{df,1-\alpha/2} * \sqrt{V_{total}} \\ 
+\end{align}
+
+* Jackknife then multiply impute: Altough a more detailed overview of the proposed jackknife estimator is provided in @sec-est, briefly, the observed dataset will be jackknifed to obtain $j = 100$ samples, each of which will be imputed $m = 2$ times, with a maximum of $maxit = 5$ iterations. The mean of the jackknife estimates will serve as the final point estimate, and a 95% confidence interval will be generated through the percentile method, where the $\alpha/2^{th}$ and $1-(\alpha/2)^{th}$ percentiles will be the lower and upper bounds, respectively. 
+
+All analyses will be conducted using \texttt{R} 4.2.1 (Funny-Looking Kid). 

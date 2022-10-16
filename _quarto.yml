@@ -8,9 +8,11 @@ book:
     - acknowledgments.qmd
     - abstract.qmd
     - background.qmd
+    - methods.qmd
     - estimator.qmd
     - results.qmd
     - references.qmd
+    - appendix.qmd
   sidebar: 
     title: " "
 

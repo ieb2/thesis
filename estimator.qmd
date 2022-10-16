@@ -1,4 +1,4 @@
-# The Proposed Jackknife Estimator
+# The Proposed Jackknife Estimator {#sec-est}
 
 A pseudocode overview of the jackknife estimator proposed may be seen in the following figure.
 
