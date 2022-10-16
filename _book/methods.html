@@ -194,15 +194,15 @@ div.csl-indent {
 \]</span></p>
 <p>With</p>
 <p><span class="math display">\[
-\beta_{V_1} = 2 ; \beta_{V_2} = 5 ; \beta_{V_3} = 8
+\beta_{V_1} = 2 ; \  \beta_{V_2} = 5 ; \ \beta_{V_3} = 8
 \]</span></p>
 <p>The outcome variable was simulated such that:</p>
 <p><span class="math display">\[
-Y = V1 + V2 + V3 + \epsilon
+Y = V_1 + V_2 + V_3 + \epsilon
 \]</span></p>
 <p>Where</p>
 <p><span class="math display">\[
-\epsilon \sim N(\mu = 0, sd \propto V2)
+\epsilon \sim N(\mu = 0, \sigma \propto V_2)
 \]</span></p>
 <p>Thus, data were simulated with heteroskedastic errors, which yields the imputation and analysis models congenial, yet misspecified.</p>
 <p>Formally, the analysis model of interest was</p>
@@ -220,20 +220,16 @@ Y = V1 + V2 + V3 + \epsilon
 </ul>
 <p><span class="math display">\[\begin{align}
 \bar{\theta} &amp;= \frac{1}{m}\left (\sum_{i=1}^m{\theta_i}\right ) \\
-
 V_{within} &amp;= \frac{1}{m} \sum_{i=1}^m{SE_i^2} \\
-
 V_{between} &amp;= \frac{\sum_{i=1}^m (\theta_i - \overline{\theta})^2}{m-1} \\
-
 V_{total} &amp;= V_W + V_B + \frac{V_B}{m} \\
-
-\bar{\theta} &amp;\pm t_{df,1-\alpha/2} * \sqrt{V_{total}} \\
+\bar{\theta} &amp;\pm t_{df,1-\alpha/2} * \sqrt{V_{total}}
 \end{align}\]</span></p>
 <ul>
 <li>Jackknife then multiply impute: Altough a more detailed overview of the proposed jackknife estimator is provided in <a href="estimator.html"><span>Chapter&nbsp;4</span></a>, briefly, the observed dataset will be jackknifed to obtain <span class="math inline">\(j = 200\)</span> samples, each of which will be imputed <span class="math inline">\(m = 2\)</span> times, with a maximum of <span class="math inline">\(maxit = 5\)</span> iterations. The mean of the jackknife estimates will serve as the final point estimate, and a 95% confidence interval will be generated through the percentile method, where the <span class="math inline">\(\alpha/2^{th}\)</span> and <span class="math inline">\(1-(\alpha/2)^{th}\)</span> percentiles will be the lower and upper bounds, respectively.</li>
 </ul>
 <p>Thereafter, the methods examined will be compared concerning their point estimates, confidence intervals, and computational expense.</p>
-<p>All analyses will be conducted using 4.2.1 (Funny-Looking Kid).</p>
+<p>All analyses will be conducted using R 4.2.1 (Funny-Looking Kid).</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">

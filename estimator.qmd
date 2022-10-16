@@ -4,17 +4,17 @@ A pseudocode overview of the jackknife estimator proposed may be seen in the fol
 
 ![A pseudocode depiction of the proposed estimator.](Algorithm_for_jackknife_estimator.jpg){width="10000"}
 
-Briefly, the algorithm begins by obtaining $j$ jackknife subsamples from the observed dataset with missing observations. Thereafter, each of the $j$ subsamples are imputed $m$ times, resulting in a total of $j \times m$ complete datasets. Subsequently, the analysis model of interest to estimate $\theta$ is applied to each of the completed datasets to produce $\hat{\theta^*}_1, \hat{\theta^*}_2, \hat{\theta^*}_3, \dots, \hat{\theta^*}_{n \choose d}$. Finally, the vector of estimates is trimmed such that values outside of the $\alpha^{th}$ and $1-\alpha^{th}$ percentiles are excluded from the determination of the point estimate and bounds of the confidence interval.
+Briefly, the algorithm begins by obtaining $j$ jackknife subsamples from the observed dataset with missing observations. Thereafter, each of the $j$ subsamples are imputed $m$ times, resulting in a total of $j \times m$ complete datasets. Subsequently, the analysis model of interest to estimate $\theta$ is applied to each of the completed datasets to produce $\hat{\theta^*}_1, \hat{\theta^*}_2, \hat{\theta^*}_3, \dots, \hat{\theta^*}_{n \choose d}$. The point estimate then becomes the mean of the previously produced $n$ pseudo-estimates, with the confidence interval the $\alpha/2^{th}$ and $1-\alpha/2^{th}$, respectively. 
 
-As part of the algorithm, researchers must choose values $d$ and $j$, which will be context-dependent quantities. Ideally, a $d$ value which satisfies $\frac{\sqrt{n}}{d} \rightarrow 0$ will provide asymptotically unbiased estimates even for non-smooth statistics[@chen_jackknife_2001; @Shao_Wu_1989]. Rewriting the foregoing condition for $d$:
+As part of the algorithm, researchers must choose values $d$ and $j$, which will be context-dependent quantities. Ideally, a $d$ value which satisfies $\frac{\sqrt{n}}{d} \rightarrow 0$ will provide asymptotically unbiased estimates even for non-smooth statistics [@chen_jackknife_2001; @Shao_Wu_1989]. Rewriting the foregoing condition for $d$
 
-$$
 \begin{align}
-  &\frac{\sqrt{n}}{d} \rightarrow \ 0 \\ 
-  &\implies d >> \sqrt{n} \\ 
-  &\text{Since} \ d < n \\
-  &\implies n > d >> \sqrt{n}
+&\frac{\sqrt{n}}{d} \rightarrow \ 0 \\ 
+&\implies d >> \sqrt{n} \\ 
+&\text{Since} \ d < n \\
+&\implies n > d >> \sqrt{n}
 \end{align}
-$$
 
-It is evident that $d$ should take on some value between $n$ and $\sqrt{n}$ with $d$ being closer to $n$, particularly for non-smooth statistics. At any rate, $j = \binom{n}{d}$ will likely be a value that is not computationally feasible to obtain. Again, the number of subsamples required, $j$, can be limited to yield the estimator more accessible. The choice of $j$ will be a multifaceted decision, where, if possible, greater values are preferred. Ideally, a small pilot study may be performed with a range of $j$ values to determine values of $j$ for which estimates begin to converge.
+It is evident that $d$ should take on some value between $n$ and $\sqrt{n}$ with $d$ being closer to $n$, particularly for non-smooth statistics. At any rate, $j = \binom{n}{d}$ will likely be a value that is not computationally feasible to obtain. As such, the number of subsamples required, $j$, can be limited to yield the estimator more accessible. The choice of $j$ will be a multifaceted decision, where, if possible, greater values are preferred. Ideally, a small pilot study may be performed with a range of $j$ values to determine values of $j$ for which estimates begin to converge. 
+
+Although not as widely applicable, researchers may consider utilizing a delete-one jackknife, as discussed in @sec-del Given the stochastic nature of multiple imputation, especially in instances where a high proportion of missingness is present, the pseudo-estimates may vary widely between any two given jackknife subsamples, similar to what would be observed in the case of percentiles. As such, the delete-one jackknife approach is not recommended for general use but could be considered in samples with low missingness proportion.
