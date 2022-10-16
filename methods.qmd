@@ -2,6 +2,44 @@
 
 For the proposed Monte Carlo simulation, $N$ = 10,000 datasets will be generated with the following characteristics: A response variable, $Y$, with $p_{miss} = 0.3$ proportion of missing observations, where the mechanism of missingness is missing at random (MAR), and an $n \times q$ matrix of fully observed covariates, where $n = 50$ is the sample size, and $q = 3$ is the number of covariates.  
 
+Formally 
+
+$$
+\begin{bmatrix} V1 \\V2 \\ V3 \end{bmatrix} \sim N\left(\begin{bmatrix} 1\\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 & 0.5 & 0.5 \\
+0.5 & 1 & 0.5 \\
+0.5 & 0.5 & 1
+\end{bmatrix}\right)
+$$
+With 
+
+$$
+\beta_{V_1} = 2 ; \beta_{V_2} = 5 ; \beta_{V_3} = 8
+$$
+The outcome variable was simulated such that: 
+
+$$
+Y = V1 + V2 + V3 + \epsilon
+$$
+Where 
+
+$$
+\epsilon \sim N(\mu = 0, sd \propto V2)
+$$
+Thus, data were simulated with heteroskedastic errors, which yields the imputation and analysis models congenial, yet misspecified. 
+
+Formally, the analysis model of interest was 
+
+$$
+\hat{Y} \sim \hat{\beta_{V_1}} + \hat{\beta_{V_2}} + \hat{\beta_{V_3}} 
+$$
+And the imputation model was 
+
+$$
+\hat{Y_{\text{mis}}} \sim \hat{\beta_{V_1}} + \hat{\beta_{V_2}} + \hat{\beta_{V_3}} 
+$$
+
+Where the imputation method of choice was predictive mean matching (PMM). 
+
 All generated datasets will be analysed using three approaches: 
   * Bootstrap then multiply impute: The observed dataset with missing observations will initially be bootstrapped $n = 200$ times. Thereafter, each of the bootstrap samples will be imputed $m = 2$ times, with a maximum of $maxit = 5$ iterations. The mean of the bootstrap estimates will serve as the final point estimate, and a 95% confidence interval will be generated through the percentile method, where the $\alpha/2^{th}$ and $1-(\alpha/2)^{th}$ percentiles will be the lower and upper bounds, respectively. 
 

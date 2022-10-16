@@ -145,6 +145,11 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
@@ -180,6 +185,35 @@ div.csl-indent {
 </header>
 
 <p>For the proposed Monte Carlo simulation, <span class="math inline">\(N\)</span> = 10,000 datasets will be generated with the following characteristics: A response variable, <span class="math inline">\(Y\)</span>, with <span class="math inline">\(p_{miss} = 0.3\)</span> proportion of missing observations, where the mechanism of missingness is missing at random (MAR), and an <span class="math inline">\(n \times q\)</span> matrix of fully observed covariates, where <span class="math inline">\(n = 50\)</span> is the sample size, and <span class="math inline">\(q = 3\)</span> is the number of covariates.</p>
+<p>Formally</p>
+<p><span class="math display">\[
+\begin{bmatrix} V1 \\V2 \\ V3 \end{bmatrix} \sim N\left(\begin{bmatrix} 1\\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 &amp; 0.5 &amp; 0.5 \\
+0.5 &amp; 1 &amp; 0.5 \\
+0.5 &amp; 0.5 &amp; 1
+\end{bmatrix}\right)
+\]</span></p>
+<p>With</p>
+<p><span class="math display">\[
+\beta_{V_1} = 2 ; \beta_{V_2} = 5 ; \beta_{V_3} = 8
+\]</span></p>
+<p>The outcome variable was simulated such that:</p>
+<p><span class="math display">\[
+Y = V1 + V2 + V3 + \epsilon
+\]</span></p>
+<p>Where</p>
+<p><span class="math display">\[
+\epsilon \sim N(\mu = 0, sd \propto V2)
+\]</span></p>
+<p>Thus, data were simulated with heteroskedastic errors, which yields the imputation and analysis models congenial, yet misspecified.</p>
+<p>Formally, the analysis model of interest was</p>
+<p><span class="math display">\[
+\hat{Y} \sim \hat{\beta_{V_1}} + \hat{\beta_{V_2}} + \hat{\beta_{V_3}}
+\]</span></p>
+<p>And the imputation model was</p>
+<p><span class="math display">\[
+\hat{Y_{\text{mis}}} \sim \hat{\beta_{V_1}} + \hat{\beta_{V_2}} + \hat{\beta_{V_3}}
+\]</span></p>
+<p>Where the imputation method of choice was predictive mean matching (PMM).</p>
 <p>All generated datasets will be analysed using three approaches: * Bootstrap then multiply impute: The observed dataset with missing observations will initially be bootstrapped <span class="math inline">\(n = 200\)</span> times. Thereafter, each of the bootstrap samples will be imputed <span class="math inline">\(m = 2\)</span> times, with a maximum of <span class="math inline">\(maxit = 5\)</span> iterations. The mean of the bootstrap estimates will serve as the final point estimate, and a 95% confidence interval will be generated through the percentile method, where the <span class="math inline">\(\alpha/2^{th}\)</span> and <span class="math inline">\(1-(\alpha/2)^{th}\)</span> percentiles will be the lower and upper bounds, respectively.</p>
 <ul>
 <li>Multiply impute then use Rubin’s rules: The observed dataset with missing observations will be imputed <span class="math inline">\(m = 10\)</span> times, with a maximum of <span class="math inline">\(maxit = 5\)</span> iterations. The point estimate, as well as the confidence interval will be obtained through the following rules proposed by Donald Rubin.</li>
@@ -196,8 +230,9 @@ V_{total} &amp;= V_W + V_B + \frac{V_B}{m} \\
 \bar{\theta} &amp;\pm t_{df,1-\alpha/2} * \sqrt{V_{total}} \\
 \end{align}\]</span></p>
 <ul>
-<li>Jackknife then multiply impute: Altough a more detailed overview of the proposed jackknife estimator is provided in <a href="estimator.html"><span>Chapter&nbsp;4</span></a>, briefly, the observed dataset will be jackknifed to obtain <span class="math inline">\(j = 100\)</span> samples, each of which will be imputed <span class="math inline">\(m = 2\)</span> times, with a maximum of <span class="math inline">\(maxit = 5\)</span> iterations. The mean of the jackknife estimates will serve as the final point estimate, and a 95% confidence interval will be generated through the percentile method, where the <span class="math inline">\(\alpha/2^{th}\)</span> and <span class="math inline">\(1-(\alpha/2)^{th}\)</span> percentiles will be the lower and upper bounds, respectively.</li>
+<li>Jackknife then multiply impute: Altough a more detailed overview of the proposed jackknife estimator is provided in <a href="estimator.html"><span>Chapter&nbsp;4</span></a>, briefly, the observed dataset will be jackknifed to obtain <span class="math inline">\(j = 200\)</span> samples, each of which will be imputed <span class="math inline">\(m = 2\)</span> times, with a maximum of <span class="math inline">\(maxit = 5\)</span> iterations. The mean of the jackknife estimates will serve as the final point estimate, and a 95% confidence interval will be generated through the percentile method, where the <span class="math inline">\(\alpha/2^{th}\)</span> and <span class="math inline">\(1-(\alpha/2)^{th}\)</span> percentiles will be the lower and upper bounds, respectively.</li>
 </ul>
+<p>Thereafter, the methods examined will be compared concerning their point estimates, confidence intervals, and computational expense.</p>
 <p>All analyses will be conducted using 4.2.1 (Funny-Looking Kid).</p>
 
 

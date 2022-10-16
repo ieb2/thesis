@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study - 4&nbsp; The Proposed Jackknife Estimator</title>
+<title>Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study - 6&nbsp; Discussion</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -44,8 +44,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./results.html" rel="next">
-<link href="./methods.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./results.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,7 +75,6 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -85,7 +84,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -135,7 +134,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimator.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></a>
+  <a href="./estimator.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -145,7 +144,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></a>
+  <a href="./discussion.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -163,14 +162,21 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link active" data-scroll-target="#conclusion"> <span class="header-section-number">6.1</span> Conclusion</a></li>
+  <li><a href="#future-directions" id="toc-future-directions" class="nav-link" data-scroll-target="#future-directions"> <span class="header-section-number">6.2</span> Future Directions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-est" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></h1>
 </div>
 
 
@@ -184,24 +190,11 @@ div.csl-indent {
 
 </header>
 
-<p>A pseudocode overview of the jackknife estimator proposed may be seen in the following figure.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Algorithm_for_jackknife_estimator.jpg" class="img-fluid figure-img" width="10000"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">A pseudocode depiction of the proposed estimator.</figcaption><p></p>
-</figure>
-</div>
-<p>Briefly, the algorithm begins by obtaining <span class="math inline">\(j\)</span> jackknife subsamples from the observed dataset with missing observations. Thereafter, each of the <span class="math inline">\(j\)</span> subsamples are imputed <span class="math inline">\(m\)</span> times, resulting in a total of <span class="math inline">\(j \times m\)</span> complete datasets. Subsequently, the analysis model of interest to estimate <span class="math inline">\(\theta\)</span> is applied to each of the completed datasets to produce <span class="math inline">\(\hat{\theta^*}_1, \hat{\theta^*}_2, \hat{\theta^*}_3, \dots, \hat{\theta^*}_{n \choose d}\)</span>. Finally, the vector of estimates is trimmed such that values outside of the <span class="math inline">\(\alpha^{th}\)</span> and <span class="math inline">\(1-\alpha^{th}\)</span> percentiles are excluded from the determination of the point estimate and bounds of the confidence interval.</p>
-<p>As part of the algorithm, researchers must choose values <span class="math inline">\(d\)</span> and <span class="math inline">\(j\)</span>, which will be context-dependent quantities. Ideally, a <span class="math inline">\(d\)</span> value which satisfies <span class="math inline">\(\frac{\sqrt{n}}{d} \rightarrow 0\)</span> will provide asymptotically unbiased estimates even for non-smooth statistics. Rewriting the foregoing condition for <span class="math inline">\(d\)</span>:</p>
-<p><span class="math display">\[
-\begin{align}
-  &amp;\frac{\sqrt{n}}{d} \rightarrow \ 0 \\
-  &amp;\implies d &gt;&gt; \sqrt{n} \\
-  &amp;\text{Since} \ d &lt; n \\
-  &amp;\implies n &gt; d &gt;&gt; \sqrt{n}
-\end{align}
-\]</span></p>
-<p>It is evident that <span class="math inline">\(d\)</span> should take on some value between <span class="math inline">\(n\)</span> and <span class="math inline">\(\sqrt{n}\)</span> with <span class="math inline">\(d\)</span> being closer to <span class="math inline">\(n\)</span>, particulary for non-smooth statistics. At any rate, <span class="math inline">\(j = \binom{n}{d}\)</span> will likely be a value that is not computationally feasible to obtain. Again, the number of subsamples required, <span class="math inline">\(j\)</span>, can be limited to yield the estimator more accessible. The choice of <span class="math inline">\(j\)</span> will be a multifaceted decision, where, if possible, greater values are preferred. Ideally, a small pilot study may be performed with a range of <span class="math inline">\(j\)</span> values to determine values of <span class="math inline">\(j\)</span> for which estimates begin to converge.</p>
+<section id="conclusion" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">6.1</span> Conclusion</h2>
+</section>
+<section id="future-directions" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="future-directions"><span class="header-section-number">6.2</span> Future Directions</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -209,6 +202,7 @@ div.csl-indent {
 Wang, N. 1998. <span>“Large-Sample Theory for Parametric Multiple Imputation Procedures.”</span> <em>Biometrika</em> 85 (4): 935–48. <a href="https://doi.org/10.1093/biomet/85.4.935">https://doi.org/10.1093/biomet/85.4.935</a>.
 </div>
 </div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -292,13 +286,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./methods.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Methods</span></span>
+      <a href="./results.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Results</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./results.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Results</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
