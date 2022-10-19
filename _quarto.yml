@@ -30,6 +30,10 @@ format:
     toc: true
     number-sections: true
     colorlinks: true
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
     
 
 nocite: |
