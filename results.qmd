@@ -136,6 +136,11 @@ benchmark_plot <- read.csv("benchmark_detailed_res.csv") %>%
     y = "Time (seconds/iteration)"
   ) + 
   theme(axis.title.y = element_blank())
+
+options(knitr.table.format = function() {
+  if (knitr::is_latex_output())
+    "latex" else "pipe"
+})
 ```
 
 ## Point Estimates
@@ -149,7 +154,8 @@ From a point estimation perspective, the statistically desirable properties of t
 ### Summary of Point Estimation Properties {#sec-point}
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
-point_estimate_sum
+point_estimate_sum %>%
+  knitr::kable()
 ```
 
 ### Distribution of Point Estimator Bias {#sec-dist}
@@ -160,12 +166,13 @@ point_dist
 
 ## Confidence Intervals {#sec-ci}
 
-Over-coverage of confidence intervals is noted across all methods; however, particulary with the jackknife and bootstrap approaches, such over-coverage is only slightly over the nominal, as such, they are likely not of concern and can be explained, in part, by the Monte Carlo standard error for the true coverage proabability of a 95% confidence interval. Among the three methods noted, Rubin's rules, by a significant margin, deviates from the nominal coverage, indicative of an overly conservative estimator. An argument could be made, particulary in the case of biological studies that an overly conservative estimator is safer than one that is anti-conservative; however, the statistical inefficieny created by conservative estimators can be of concern, particulary in instances where small sample sizes are present or the test being utilized already has low statistical power. Comparing these methods concerning confidence interval width, it is noted that both resampling approaches provide  narrower confidence intervals, with the jackknife approach providing the narrowest confidence intervals by a wide margin. In instances where nominal, or near-nominal coverage is reached, narrower confidence intervals are indicative of more efficient estimators. Given the near-nominal coverage noted with the jackknife estimator, combined with the narrow confidence intervals it produces, its superity to the two other methods may be inferred. 
+Over-coverage of confidence intervals is noted across all methods; however, particulary with the jackknife and bootstrap approaches, such over-coverage is only slightly over the nominal, as such, they are likely not of concern and can be explained, in part, by the Monte Carlo standard error for the true coverage proabability of a 95% confidence interval. Among the three methods noted, Rubin's rules, by a significant margin, deviates from the nominal coverage, indicative of an overly conservative estimator. An argument could be made, particulary in the case of biological studies that an overly conservative estimator is safer than one that is anti-conservative; however, the statistical inefficieny created by conservative estimators can be of concern, particulary in instances where small sample sizes are present or the test being utilized already has low statistical power. Comparing these methods concerning confidence interval width, it is noted that both resampling approaches provide  narrower confidence intervals, with the jackknife approach providing the narrowest confidence intervals by a wide margin. In instances where nominal, or near-nominal coverage is reached, narrower confidence intervals are indicative of more efficient estimators. Given the near-nominal coverage noted with the jackknife estimator, combined with the narrow confidence intervals it produces, its superiority to the two other methods may be inferred. 
 
 A visual overview of the coverage probabilities may be noted in @sec-zip, where zipper plots of the methods are presented utilizing a simple random sample of 100 observations from the Monte Carlo simulation results of all methods examined. Given the small number of subsamples examined for visual clarity, the plots may not be indicative of the larger results presented above; however, they provide an appreciation for the meaning of coverage probabilities. 
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
-ci_sum
+ci_sum %>%
+  knitr::kable()
 ```
 
 ### Zipper Plots for Confidence Interval Coverage {#sec-zip}
@@ -181,7 +188,8 @@ Finally, the three methods are compared concerning their computational expenses.
 Despite generating the same number of subsamples $(n = 200)$, albeit in contrasting manners, with the same number of imputations $(m = 2)$ and iterations $(maxit = 5)$, it is surprising that the bootstrap approach took nearly ten times longer per iterations to provide estimates. Regardless, the significantly reduced computational expense of the jackknife estimator yields it superior to the bootstrap approach under this particular scenario. 
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
-benchmark_res_ord
+benchmark_res_ord %>%
+  knitr::kable()
 ```
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}

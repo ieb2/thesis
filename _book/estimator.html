@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.607">
+<meta name="generator" content="quarto-1.0.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -54,7 +54,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -188,36 +188,54 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Algorithm_for_jackknife_estimator.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">A pseudocode depiction of the proposed estimator.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">A pseudocode depiction of the proposed estimator.</figcaption><p></p>
 </figure>
 </div>
-<p>Briefly, the algorithm begins by obtaining <span class="math inline">\(j\)</span> jackknife subsamples from the observed dataset with missing observations. Thereafter, each of the <span class="math inline">\(j\)</span> subsamples are imputed <span class="math inline">\(m\)</span> times, resulting in a total of <span class="math inline">\(j \times m\)</span> complete datasets. Subsequently, the analysis model of interest to estimate <span class="math inline">\(\theta\)</span> is applied to each of the completed datasets to produce <span class="math inline">\(\hat{\theta^*}_1, \hat{\theta^*}_2, \hat{\theta^*}_3, \dots, \hat{\theta^*}_{n \choose d}\)</span>. The point estimate then becomes the mean of the previously produced <span class="math inline">\(n\)</span> pseudo-estimates, with the confidence interval the <span class="math inline">\(\alpha/2^{th}\)</span> and <span class="math inline">\(1-\alpha/2^{th}\)</span>, respectively.</p>
-<p>As part of the algorithm, researchers must choose values <span class="math inline">\(d\)</span> and <span class="math inline">\(j\)</span>, which will be context-dependent quantities. Ideally, a <span class="math inline">\(d\)</span> value which satisfies <span class="math inline">\(\frac{\sqrt{n}}{d} \rightarrow 0\)</span> will provide asymptotically unbiased estimates even for non-smooth statistics <span class="citation" data-cites="chen_jackknife_2001 Shao_Wu_1989">(<a href="references.html#ref-chen_jackknife_2001" role="doc-biblioref">Chen and Shao 2001</a>; <a href="references.html#ref-Shao_Wu_1989" role="doc-biblioref">Shao and Wu 1989</a>)</span>. Rewriting the foregoing condition for <span class="math inline">\(d\)</span></p>
+<p>Briefly, the algorithm begins by obtaining <span class="math inline">\(j\)</span> jackknife subsamples from the observed dataset with missing observations. Thereafter, each of the <span class="math inline">\(j\)</span> subsamples are imputed <span class="math inline">\(m\)</span> times, resulting in a total of <span class="math inline">\(j \times m\)</span> complete datasets. Subsequently, the analysis model of interest to estimate <span class="math inline">\(\theta\)</span> is applied to each of the completed datasets to produce <span class="math inline">\(\hat{\theta^*}_1, \hat{\theta^*}_2, \hat{\theta^*}_3, \dots, \hat{\theta^*}_{n \choose d}\)</span>. The point estimate then becomes the mean of the previously produced <span class="math inline">\(n\)</span> pseudo-estimates. As for the confidence interval, the <span class="math inline">\(\alpha/2^{th}\)</span> and <span class="math inline">\(1-\alpha/2^{th}\)</span>, values serve as the lower and upper bounds, respectively.</p>
+<p>As part of the algorithm, researchers must choose values <span class="math inline">\(d\)</span> and <span class="math inline">\(j\)</span>, which will be context-dependent quantities. Ideally, a <span class="math inline">\(d\)</span> value which satisfies <span class="math inline">\(\frac{\sqrt{n}}{d} \rightarrow 0\)</span> will provide asymptotically unbiased estimates even for non-smooth statistics <span class="citation" data-cites="chen_jackknife_2001 Shao_Wu_1989"><a href="references.html#ref-chen_jackknife_2001" role="doc-biblioref">[1]</a>, <a href="references.html#ref-Shao_Wu_1989" role="doc-biblioref">[2]</a></span>. Rewriting the foregoing condition for <span class="math inline">\(d\)</span></p>
 <p><span class="math display">\[\begin{align}
 &amp;\frac{\sqrt{n}}{d} \rightarrow \ 0 \\
 &amp;\implies d &gt;&gt; \sqrt{n} \\
-&amp;\text{Since} \ d &lt; n \\
+&amp;\text{Since} \ n &gt; d \\
 &amp;\implies n &gt; d &gt;&gt; \sqrt{n}
 \end{align}\]</span></p>
-<p>It is evident that <span class="math inline">\(d\)</span> should take on some value between <span class="math inline">\(n\)</span> and <span class="math inline">\(\sqrt{n}\)</span> with <span class="math inline">\(d\)</span> being closer to <span class="math inline">\(n\)</span>, particularly for non-smooth statistics. At any rate, <span class="math inline">\(j = \binom{n}{d}\)</span> will likely be a value that is not computationally feasible to obtain. As such, the number of subsamples required, <span class="math inline">\(j\)</span>, can be limited to yield the estimator more accessible. The choice of <span class="math inline">\(j\)</span> will be a multifaceted decision, where, if possible, greater values are preferred. Ideally, a small pilot study may be performed with a range of <span class="math inline">\(j\)</span> values to determine values of <span class="math inline">\(j\)</span> for which estimates begin to converge.</p>
+<p>It is evident that <span class="math inline">\(d\)</span> should take on some value between <span class="math inline">\(n\)</span> and <span class="math inline">\(\sqrt{n}\)</span> with <span class="math inline">\(d\)</span> being closer to <span class="math inline">\(n\)</span>, particularly for non-smooth statistics. At any rate, <span class="math inline">\(j = {n \choose d}\)</span> will likely be a value that is not computationally feasible to obtain. As such, the number of subsamples required, <span class="math inline">\(j\)</span>, can be limited to yield the estimator more accessible. The choice of <span class="math inline">\(j\)</span> will be a multifaceted decision, where, if possible, greater values are preferred. Ideally, a small pilot study may be performed with a range of <span class="math inline">\(j\)</span> values to determine values of <span class="math inline">\(j\)</span> for which estimates begin to converge.</p>
 <p>Although not as widely applicable, researchers may consider utilizing a delete-one jackknife, as discussed in <a href="background.html#sec-del"><span>Section&nbsp;2.2.1</span></a> Given the stochastic nature of multiple imputation, especially in instances where a high proportion of missingness is present, the pseudo-estimates may vary widely between any two given jackknife subsamples, similar to what would be observed in the case of percentiles. As such, the delete-one jackknife approach is not recommended for general use but could be considered in samples with low missingness proportion.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
 <div id="ref-chen_jackknife_2001" class="csl-entry" role="doc-biblioentry">
-Chen, Jiahua, and Jun Shao. 2001. <span>“Jackknife Variance Estimation for Nearest-Neighbor Imputation.”</span> <em>Journal of the American Statistical Association</em> 96 (453): 260–69. <a href="https://doi.org/10.1198/016214501750332839">https://doi.org/10.1198/016214501750332839</a>.
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">J. Chen and J. Shao, <span>“Jackknife variance estimation for nearest-neighbor imputation,”</span> <em>Journal of the American Statistical Association</em>, vol. 96, no. 453, pp. 260–269, Mar. 2001, doi: <a href="https://doi.org/10.1198/016214501750332839">10.1198/016214501750332839</a>.</div>
 </div>
 <div id="ref-Shao_Wu_1989" class="csl-entry" role="doc-biblioentry">
-Shao, Jun, and C. F. J. Wu. 1989. <span>“A General Theory for Jackknife Variance Estimation.”</span> <em>The Annals of Statistics</em> 17 (3): 1176–97. <a href="https://doi.org/10.1214/aos/1176347263">https://doi.org/10.1214/aos/1176347263</a>.
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">J. Shao and C. F. J. Wu, <span>“A general theory for jackknife variance estimation,”</span> <em>The Annals of Statistics</em>, vol. 17, no. 3, pp. 1176–1197, Sep. 1989, doi: <a href="https://doi.org/10.1214/aos/1176347263">10.1214/aos/1176347263</a>.</div>
 </div>
 <div id="ref-Wang_1998" class="csl-entry" role="doc-biblioentry">
-Wang, N. 1998. <span>“Large-Sample Theory for Parametric Multiple Imputation Procedures.”</span> <em>Biometrika</em> 85 (4): 935–48. <a href="https://doi.org/10.1093/biomet/85.4.935">https://doi.org/10.1093/biomet/85.4.935</a>.
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">N. Wang, <span>“Large-sample theory for parametric multiple imputation procedures,”</span> <em>Biometrika</em>, vol. 85, no. 4, pp. 935–948, Dec. 1998, doi: <a href="https://doi.org/10.1093/biomet/85.4.935">10.1093/biomet/85.4.935</a>.</div>
 </div>
 </div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

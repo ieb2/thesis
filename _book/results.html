@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.607">
+<meta name="generator" content="quarto-1.0.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -54,7 +54,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -215,12 +215,42 @@ div.csl-indent {
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="sec-point"><span class="header-section-number">5.1.1</span> Summary of Point Estimation Properties</h3>
 <div class="cell">
 <div class="cell-output-display">
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Method"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Median Point Estimates "],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Mean Point Estimates"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["SD of Point Estimates"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Jackknife","2":"1.971975","3":"1.965713","4":"0.3648634"},{"1":"Bootstrap","2":"1.928350","3":"1.921044","4":"0.4442088"},{"1":"Rubin's Rules","2":"1.788012","3":"1.750637","4":"0.4962010"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 29%">
+<col style="width: 25%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Method</th>
+<th style="text-align: right;">Median Point Estimates</th>
+<th style="text-align: right;">Mean Point Estimates</th>
+<th style="text-align: right;">SD of Point Estimates</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Jackknife</td>
+<td style="text-align: right;">1.971975</td>
+<td style="text-align: right;">1.965713</td>
+<td style="text-align: right;">0.3648634</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bootstrap</td>
+<td style="text-align: right;">1.928350</td>
+<td style="text-align: right;">1.921044</td>
+<td style="text-align: right;">0.4442088</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rubin’s Rules</td>
+<td style="text-align: right;">1.788012</td>
+<td style="text-align: right;">1.750637</td>
+<td style="text-align: right;">0.4962010</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </section>
@@ -235,16 +265,51 @@ div.csl-indent {
 </section>
 <section id="sec-ci" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="sec-ci"><span class="header-section-number">5.2</span> Confidence Intervals</h2>
-<p>Over-coverage of confidence intervals is noted across all methods; however, particulary with the jackknife and bootstrap approaches, such over-coverage is only slightly over the nominal, as such, they are likely not of concern and can be explained, in part, by the Monte Carlo standard error for the true coverage proabability of a 95% confidence interval. Among the three methods noted, Rubin’s rules, by a significant margin, deviates from the nominal coverage, indicative of an overly conservative estimator. An argument could be made, particulary in the case of biological studies that an overly conservative estimator is safer than one that is anti-conservative; however, the statistical inefficieny created by conservative estimators can be of concern, particulary in instances where small sample sizes are present or the test being utilized already has low statistical power. Comparing these methods concerning confidence interval width, it is noted that both resampling approaches provide narrower confidence intervals, with the jackknife approach providing the narrowest confidence intervals by a wide margin. In instances where nominal, or near-nominal coverage is reached, narrower confidence intervals are indicative of more efficient estimators. Given the near-nominal coverage noted with the jackknife estimator, combined with the narrow confidence intervals it produces, its superity to the two other methods may be inferred.</p>
+<p>Over-coverage of confidence intervals is noted across all methods; however, particulary with the jackknife and bootstrap approaches, such over-coverage is only slightly over the nominal, as such, they are likely not of concern and can be explained, in part, by the Monte Carlo standard error for the true coverage proabability of a 95% confidence interval. Among the three methods noted, Rubin’s rules, by a significant margin, deviates from the nominal coverage, indicative of an overly conservative estimator. An argument could be made, particulary in the case of biological studies that an overly conservative estimator is safer than one that is anti-conservative; however, the statistical inefficieny created by conservative estimators can be of concern, particulary in instances where small sample sizes are present or the test being utilized already has low statistical power. Comparing these methods concerning confidence interval width, it is noted that both resampling approaches provide narrower confidence intervals, with the jackknife approach providing the narrowest confidence intervals by a wide margin. In instances where nominal, or near-nominal coverage is reached, narrower confidence intervals are indicative of more efficient estimators. Given the near-nominal coverage noted with the jackknife estimator, combined with the narrow confidence intervals it produces, its superiority to the two other methods may be inferred.</p>
 <p>A visual overview of the coverage probabilities may be noted in <a href="#sec-zip"><span>Section&nbsp;5.2.1</span></a>, where zipper plots of the methods are presented utilizing a simple random sample of 100 observations from the Monte Carlo simulation results of all methods examined. Given the small number of subsamples examined for visual clarity, the plots may not be indicative of the larger results presented above; however, they provide an appreciation for the meaning of coverage probabilities.</p>
 <div class="cell">
 <div class="cell-output-display">
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Method"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Coverage Probability"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Median C.I. Width"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Mean C.I. Width"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["SD of C.I. Width"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Jackknife","2":"97.67","3":"1.610436","4":"1.683248","5":"0.5197257"},{"1":"Bootstrap","2":"97.69","3":"2.161853","4":"2.228137","5":"0.6423704"},{"1":"Rubin's Rules","2":"98.46","3":"2.455640","4":"2.537168","5":"0.7230490"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 24%">
+<col style="width: 20%">
+<col style="width: 18%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Method</th>
+<th style="text-align: right;">Coverage Probability</th>
+<th style="text-align: right;">Median C.I. Width</th>
+<th style="text-align: right;">Mean C.I. Width</th>
+<th style="text-align: right;">SD of C.I. Width</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Jackknife</td>
+<td style="text-align: right;">97.67</td>
+<td style="text-align: right;">1.610436</td>
+<td style="text-align: right;">1.683248</td>
+<td style="text-align: right;">0.5197257</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bootstrap</td>
+<td style="text-align: right;">97.69</td>
+<td style="text-align: right;">2.161853</td>
+<td style="text-align: right;">2.228137</td>
+<td style="text-align: right;">0.6423704</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rubin’s Rules</td>
+<td style="text-align: right;">98.46</td>
+<td style="text-align: right;">2.455640</td>
+<td style="text-align: right;">2.537168</td>
+<td style="text-align: right;">0.7230490</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <section id="sec-zip" class="level3" data-number="5.2.1">
@@ -262,12 +327,42 @@ div.csl-indent {
 <p>Despite generating the same number of subsamples <span class="math inline">\((n = 200)\)</span>, albeit in contrasting manners, with the same number of imputations <span class="math inline">\((m = 2)\)</span> and iterations <span class="math inline">\((maxit = 5)\)</span>, it is surprising that the bootstrap approach took nearly ten times longer per iterations to provide estimates. Regardless, the significantly reduced computational expense of the jackknife estimator yields it superior to the bootstrap approach under this particular scenario.</p>
 <div class="cell">
 <div class="cell-output-display">
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Method"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Median Time (seconds/iteration)"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Mean Time (seconds/iteration)"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["SD of Time (seconds/iteration)"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Jackknife","2":"8.658003","3":"8.800480","4":"0.63197269"},{"1":"Bootstrap","2":"72.480187","3":"73.012739","4":"1.62463206"},{"1":"Rubin's Rules","2":"3.188039","3":"3.183781","4":"0.09134005"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 29%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Method</th>
+<th style="text-align: right;">Median Time (seconds/iteration)</th>
+<th style="text-align: right;">Mean Time (seconds/iteration)</th>
+<th style="text-align: right;">SD of Time (seconds/iteration)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Jackknife</td>
+<td style="text-align: right;">8.658003</td>
+<td style="text-align: right;">8.800480</td>
+<td style="text-align: right;">0.6319727</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bootstrap</td>
+<td style="text-align: right;">72.480187</td>
+<td style="text-align: right;">73.012739</td>
+<td style="text-align: right;">1.6246321</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rubin’s Rules</td>
+<td style="text-align: right;">3.188039</td>
+<td style="text-align: right;">3.183781</td>
+<td style="text-align: right;">0.0913400</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="cell">
@@ -277,9 +372,9 @@ div.csl-indent {
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
 <div id="ref-Wang_1998" class="csl-entry" role="doc-biblioentry">
-Wang, N. 1998. <span>“Large-Sample Theory for Parametric Multiple Imputation Procedures.”</span> <em>Biometrika</em> 85 (4): 935–48. <a href="https://doi.org/10.1093/biomet/85.4.935">https://doi.org/10.1093/biomet/85.4.935</a>.
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">N. Wang, <span>“Large-sample theory for parametric multiple imputation procedures,”</span> <em>Biometrika</em>, vol. 85, no. 4, pp. 935–948, Dec. 1998, doi: <a href="https://doi.org/10.1093/biomet/85.4.935">10.1093/biomet/85.4.935</a>.</div>
 </div>
 </div>
 </section>
@@ -287,6 +382,24 @@ Wang, N. 1998. <span>“Large-Sample Theory for Parametric Multiple Imputation P
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

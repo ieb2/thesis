@@ -1,6 +1,8 @@
 # Methods 
 
-For the proposed Monte Carlo simulation, $N$ = 10,000 datasets were generated with the following characteristics: A response variable, $Y$, where 30% of the observations were missing at random (MAR), and an $n \times q$ matrix of fully observed covariates, where $n = 50$ was the sample size, and $q = 3$ the number of covariates.  
+For the proposed Monte Carlo simulation, $N$ = 10,000 datasets were generated with the following characteristics: A response variable, $Y$, where 30% of the observations were missing at random (MAR)[^background-3], and an $n \times q$ matrix of fully observed covariates, where $n = 50$ was the sample size, and $q = 3$ the number of covariates. 
+
+[^background-3]: Please see the appendix for a detailed overview of mechanisms of missingness, and their implications.
 
 Formally 
 
@@ -42,7 +44,7 @@ Where the imputation method of choice was predictive mean matching (PMM).
 
 All generated datasets were analysed using three approaches: 
 
-  * **Bootstrap then multiply impute:** The observed dataset with missing observations was initially bootstrapped $n = 200$ times. Thereafter, each of the bootstrap samples were imputed $m = 2$ times, with a maximum of $maxit = 5$ iterations. The mean of the bootstrap estimates served as the final point estimate, and a 95% confidence interval was generated through the percentile method, where the $\alpha/2^{th}$ and $1-(\alpha/2)^{th}$ percentiles were the lower and upper bounds, respectively. The R package, *bootImpute* was be utilized for this process. 
+  * **Bootstrap then multiply impute:** The observed dataset with missing observations was initially bootstrapped $n = 200$ times. Thereafter, each of the bootstrap samples were imputed $m = 2$ times, with a maximum of $maxit = 5$ iterations. The mean of the bootstrap estimates served as the final point estimate, and a 95% confidence interval was generated through the percentile method, where the $\alpha/2^{th}$ and $1-(\alpha/2)^{th}$ percentiles were the lower and upper bounds, respectively. The R package, *bootImpute* was utilized for this process. 
 
   * **Multiply impute then use Rubin's rules:** The observed dataset with missing observations was imputed $m = 10$ times, with a maximum of $maxit = 5$ iterations. The point estimate, as well as the confidence interval was obtained through the following rules proposed by Donald Rubin. The *mice* package was utilized for this process. 
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.607">
+<meta name="generator" content="quarto-1.0.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -54,7 +54,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -184,7 +184,7 @@ div.csl-indent {
 
 </header>
 
-<p>For the proposed Monte Carlo simulation, <span class="math inline">\(N\)</span> = 10,000 datasets were generated with the following characteristics: A response variable, <span class="math inline">\(Y\)</span>, where 30% of the observations were missing at random (MAR), and an <span class="math inline">\(n \times q\)</span> matrix of fully observed covariates, where <span class="math inline">\(n = 50\)</span> was the sample size, and <span class="math inline">\(q = 3\)</span> the number of covariates.</p>
+<p>For the proposed Monte Carlo simulation, <span class="math inline">\(N\)</span> = 10,000 datasets were generated with the following characteristics: A response variable, <span class="math inline">\(Y\)</span>, where 30% of the observations were missing at random (MAR)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, and an <span class="math inline">\(n \times q\)</span> matrix of fully observed covariates, where <span class="math inline">\(n = 50\)</span> was the sample size, and <span class="math inline">\(q = 3\)</span> the number of covariates.</p>
 <p>Formally</p>
 <p><span class="math display">\[
 \begin{bmatrix} V1 \\V2 \\ V3 \end{bmatrix} \sim N\left(\begin{bmatrix} 1\\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 &amp; 0.5 &amp; 0.5 \\
@@ -216,7 +216,7 @@ Y = V_1 + V_2 + V_3 + \epsilon
 <p>Where the imputation method of choice was predictive mean matching (PMM).</p>
 <p>All generated datasets were analysed using three approaches:</p>
 <ul>
-<li><p><strong>Bootstrap then multiply impute:</strong> The observed dataset with missing observations was initially bootstrapped <span class="math inline">\(n = 200\)</span> times. Thereafter, each of the bootstrap samples were imputed <span class="math inline">\(m = 2\)</span> times, with a maximum of <span class="math inline">\(maxit = 5\)</span> iterations. The mean of the bootstrap estimates served as the final point estimate, and a 95% confidence interval was generated through the percentile method, where the <span class="math inline">\(\alpha/2^{th}\)</span> and <span class="math inline">\(1-(\alpha/2)^{th}\)</span> percentiles were the lower and upper bounds, respectively. The R package, <em>bootImpute</em> was be utilized for this process.</p></li>
+<li><p><strong>Bootstrap then multiply impute:</strong> The observed dataset with missing observations was initially bootstrapped <span class="math inline">\(n = 200\)</span> times. Thereafter, each of the bootstrap samples were imputed <span class="math inline">\(m = 2\)</span> times, with a maximum of <span class="math inline">\(maxit = 5\)</span> iterations. The mean of the bootstrap estimates served as the final point estimate, and a 95% confidence interval was generated through the percentile method, where the <span class="math inline">\(\alpha/2^{th}\)</span> and <span class="math inline">\(1-(\alpha/2)^{th}\)</span> percentiles were the lower and upper bounds, respectively. The R package, <em>bootImpute</em> was utilized for this process.</p></li>
 <li><p><strong>Multiply impute then use Rubin’s rules:</strong> The observed dataset with missing observations was imputed <span class="math inline">\(m = 10\)</span> times, with a maximum of <span class="math inline">\(maxit = 5\)</span> iterations. The point estimate, as well as the confidence interval was obtained through the following rules proposed by Donald Rubin. The <em>mice</em> package was utilized for this process.</p></li>
 </ul>
 <p><span class="math display">\[\begin{align}
@@ -233,15 +233,39 @@ V_{\text{total}} &amp;= V_W + V_B + \frac{V_B}{m} \\
 <p>All analyses were be conducted using R 4.2.1 (Funny-Looking Kid).</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="refs" class="references csl-bib-body" role="doc-bibliography" style="display: none">
 <div id="ref-Wang_1998" class="csl-entry" role="doc-biblioentry">
-Wang, N. 1998. <span>“Large-Sample Theory for Parametric Multiple Imputation Procedures.”</span> <em>Biometrika</em> 85 (4): 935–48. <a href="https://doi.org/10.1093/biomet/85.4.935">https://doi.org/10.1093/biomet/85.4.935</a>.
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">N. Wang, <span>“Large-sample theory for parametric multiple imputation procedures,”</span> <em>Biometrika</em>, vol. 85, no. 4, pp. 935–948, Dec. 1998, doi: <a href="https://doi.org/10.1093/biomet/85.4.935">10.1093/biomet/85.4.935</a>.</div>
 </div>
 </div>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>Please see the appendix for a detailed overview of mechanisms of missingness, and their implications.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
