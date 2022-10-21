@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.607">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study - 5&nbsp; Results</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./discussion.html" rel="next">
+<link href="./estimator.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Results</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"></a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span style="color:white">Title Page</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./abstract.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Methods</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./estimator.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./results.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Results</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix.html" class="sidebar-item-text sidebar-link">Appendix</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#point-estimates" id="toc-point-estimates" class="nav-link active" data-scroll-target="#point-estimates"> <span class="header-section-number">5.1</span> Point Estimates</a>
+  <ul class="collapse">
+  <li><a href="#sec-point" id="toc-sec-point" class="nav-link" data-scroll-target="#sec-point"> <span class="header-section-number">5.1.1</span> Summary of Point Estimation Properties</a></li>
+  <li><a href="#sec-dist" id="toc-sec-dist" class="nav-link" data-scroll-target="#sec-dist"> <span class="header-section-number">5.1.2</span> Distribution of Point Estimator Bias</a></li>
+  </ul></li>
+  <li><a href="#sec-ci" id="toc-sec-ci" class="nav-link" data-scroll-target="#sec-ci"> <span class="header-section-number">5.2</span> Confidence Intervals</a>
+  <ul class="collapse">
+  <li><a href="#sec-zip" id="toc-sec-zip" class="nav-link" data-scroll-target="#sec-zip"> <span class="header-section-number">5.2.1</span> Zipper Plots for Confidence Interval Coverage</a></li>
+  </ul></li>
+  <li><a href="#performance-benchmark-results" id="toc-performance-benchmark-results" class="nav-link" data-scroll-target="#performance-benchmark-results"> <span class="header-section-number">5.3</span> Performance Benchmark Results</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Results</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>Per the Methods section, the performance of the proposed jackknife estimator was compared to two leading methods in the literature, Rubin’s rules following multiple imputation and Bootstrap resampling prior to multiple imputation. The methods were compared concerning the coverage probabilities they generated, the widths of their respective confidence intervals, their computational expense, and the bias of their point estimators.</p>
+<div class="cell">
+
+</div>
+<section id="point-estimates" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="point-estimates"><span class="header-section-number">5.1</span> Point Estimates</h2>
+<p>All methods, perhaps with the exception of Rubin’s rules, produced reasonable point estimates with minimal bias. Rubin’s rules resulted in slightly anticonservative point estimates with greater standard deviation, indicative of a statistically inefficient estimator with high variability. This finding is unsurprising given the literature on Rubin’s rules and its performance under uncongeniality.</p>
+<p>In contrast, it is noted that both resampling methods examined provide nearly unbiased point estimates with smaller standard deviations compared to Rubin’s rules. Again, given the literature on uncongeniality, this finding was unsurprising; however, given the lack of both empirical and theoretical justification for the bootstrap approach in small sample sizes, the desirable properties noted are worthy of further examination. Between all three methods, nevertheless, it is noted that the proposed jackknife estimator produced estimates with the smallest amount of bias, as well as the smallest standard deviation, an observation perhaps better observed in <a href="#sec-dist"><span>Section&nbsp;5.1.2</span></a>, where the distribution of the biases of the point estimates is compared. From the kernel density plots presented, it is evident that Rubin’s rules slightly underestimate the parameter. Compared to Rubin’s rules, both resampling approaches provide point estimates that are nearly unbiased; however, it is noted that the bootstrap estimates, despite being centered near zero, are slightly more dispersed compared to the jackknife estimates, which present as a narrow distribution centered at zero. This observation is justified by the values provided in <a href="#sec-point"><span>Section&nbsp;5.1.1</span></a> which demonstrate that the jackknife point estimates have a smaller standard deviation than the bootstrap approach and Rubin’s rules.</p>
+<p>From a point estimation perspective, the statistically desirable properties of the jackknife estimator, alongside its theoretical and empirical justification when used with small sample sizes, yield it a desirable estimator.</p>
+<section id="sec-point" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="sec-point"><span class="header-section-number">5.1.1</span> Summary of Point Estimation Properties</h3>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Method"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Median Point Estimates "],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Mean Point Estimates"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["SD of Point Estimates"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Jackknife","2":"1.971975","3":"1.965713","4":"0.3648634"},{"1":"Bootstrap","2":"1.928350","3":"1.921044","4":"0.4442088"},{"1":"Rubin's Rules","2":"1.788012","3":"1.750637","4":"0.4962010"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-dist" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="sec-dist"><span class="header-section-number">5.1.2</span> Distribution of Point Estimator Bias</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="results_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-ci" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-ci"><span class="header-section-number">5.2</span> Confidence Intervals</h2>
+<p>Over-coverage of confidence intervals is noted across all methods; however, particulary with the jackknife and bootstrap approaches, such over-coverage is only slightly over the nominal, as such, they are likely not of concern and can be explained, in part, by the Monte Carlo standard error for the true coverage proabability of a 95% confidence interval. Among the three methods noted, Rubin’s rules, by a significant margin, deviates from the nominal coverage, indicative of an overly conservative estimator. An argument could be made, particulary in the case of biological studies that an overly conservative estimator is safer than one that is anti-conservative; however, the statistical inefficieny created by conservative estimators can be of concern, particulary in instances where small sample sizes are present or the test being utilized already has low statistical power. Comparing these methods concerning confidence interval width, it is noted that both resampling approaches provide narrower confidence intervals, with the jackknife approach providing the narrowest confidence intervals by a wide margin. In instances where nominal, or near-nominal coverage is reached, narrower confidence intervals are indicative of more efficient estimators. Given the near-nominal coverage noted with the jackknife estimator, combined with the narrow confidence intervals it produces, its superity to the two other methods may be inferred.</p>
+<p>A visual overview of the coverage probabilities may be noted in <a href="#sec-zip"><span>Section&nbsp;5.2.1</span></a>, where zipper plots of the methods are presented utilizing a simple random sample of 100 observations from the Monte Carlo simulation results of all methods examined. Given the small number of subsamples examined for visual clarity, the plots may not be indicative of the larger results presented above; however, they provide an appreciation for the meaning of coverage probabilities.</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Method"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Coverage Probability"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Median C.I. Width"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Mean C.I. Width"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["SD of C.I. Width"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Jackknife","2":"97.67","3":"1.610436","4":"1.683248","5":"0.5197257"},{"1":"Bootstrap","2":"97.69","3":"2.161853","4":"2.228137","5":"0.6423704"},{"1":"Rubin's Rules","2":"98.46","3":"2.455640","4":"2.537168","5":"0.7230490"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<section id="sec-zip" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="sec-zip"><span class="header-section-number">5.2.1</span> Zipper Plots for Confidence Interval Coverage</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="results_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="performance-benchmark-results" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="performance-benchmark-results"><span class="header-section-number">5.3</span> Performance Benchmark Results</h2>
+<p>Finally, the three methods are compared concerning their computational expenses. Comparing the two approaches, which require further resampling, it is noted that the bootstrap approach takes nearly ten times longer than the jackknife approach per iteration. Unsurprisingly, Rubin’s rules, which do not rely on any further resampling besides the one performed during multiple imputation, was the fastest approach. However, given its biased estimates under uncongeniality or misspecification, the computational advantage it brings to the table adds very little value.</p>
+<p>Despite generating the same number of subsamples <span class="math inline">\((n = 200)\)</span>, albeit in contrasting manners, with the same number of imputations <span class="math inline">\((m = 2)\)</span> and iterations <span class="math inline">\((maxit = 5)\)</span>, it is surprising that the bootstrap approach took nearly ten times longer per iterations to provide estimates. Regardless, the significantly reduced computational expense of the jackknife estimator yields it superior to the bootstrap approach under this particular scenario.</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Method"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Median Time (seconds/iteration)"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Mean Time (seconds/iteration)"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["SD of Time (seconds/iteration)"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Jackknife","2":"8.658003","3":"8.800480","4":"0.63197269"},{"1":"Bootstrap","2":"72.480187","3":"73.012739","4":"1.62463206"},{"1":"Rubin's Rules","2":"3.188039","3":"3.183781","4":"0.09134005"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="results_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-Wang_1998" class="csl-entry" role="doc-biblioentry">
+Wang, N. 1998. <span>“Large-Sample Theory for Parametric Multiple Imputation Procedures.”</span> <em>Biometrika</em> 85 (4): 935–48. <a href="https://doi.org/10.1093/biomet/85.4.935">https://doi.org/10.1093/biomet/85.4.935</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./estimator.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./discussion.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

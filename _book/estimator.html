@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.607">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study - 4&nbsp; The Proposed Jackknife Estimator</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./results.html" rel="next">
+<link href="./methods.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"></a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span style="color:white">Title Page</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgments.html" class="sidebar-item-text sidebar-link">Acknowledgments</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./abstract.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./background.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Methods</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./estimator.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./results.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Results</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./discussion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Discussion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix.html" class="sidebar-item-text sidebar-link">Appendix</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-est" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Proposed Jackknife Estimator</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>A pseudocode overview of the jackknife estimator proposed may be seen in the following figure.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Algorithm_for_jackknife_estimator.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">A pseudocode depiction of the proposed estimator.</figcaption><p></p>
+</figure>
+</div>
+<p>Briefly, the algorithm begins by obtaining <span class="math inline">\(j\)</span> jackknife subsamples from the observed dataset with missing observations. Thereafter, each of the <span class="math inline">\(j\)</span> subsamples are imputed <span class="math inline">\(m\)</span> times, resulting in a total of <span class="math inline">\(j \times m\)</span> complete datasets. Subsequently, the analysis model of interest to estimate <span class="math inline">\(\theta\)</span> is applied to each of the completed datasets to produce <span class="math inline">\(\hat{\theta^*}_1, \hat{\theta^*}_2, \hat{\theta^*}_3, \dots, \hat{\theta^*}_{n \choose d}\)</span>. The point estimate then becomes the mean of the previously produced <span class="math inline">\(n\)</span> pseudo-estimates, with the confidence interval the <span class="math inline">\(\alpha/2^{th}\)</span> and <span class="math inline">\(1-\alpha/2^{th}\)</span>, respectively.</p>
+<p>As part of the algorithm, researchers must choose values <span class="math inline">\(d\)</span> and <span class="math inline">\(j\)</span>, which will be context-dependent quantities. Ideally, a <span class="math inline">\(d\)</span> value which satisfies <span class="math inline">\(\frac{\sqrt{n}}{d} \rightarrow 0\)</span> will provide asymptotically unbiased estimates even for non-smooth statistics <span class="citation" data-cites="chen_jackknife_2001 Shao_Wu_1989">(<a href="references.html#ref-chen_jackknife_2001" role="doc-biblioref">Chen and Shao 2001</a>; <a href="references.html#ref-Shao_Wu_1989" role="doc-biblioref">Shao and Wu 1989</a>)</span>. Rewriting the foregoing condition for <span class="math inline">\(d\)</span></p>
+<p><span class="math display">\[\begin{align}
+&amp;\frac{\sqrt{n}}{d} \rightarrow \ 0 \\
+&amp;\implies d &gt;&gt; \sqrt{n} \\
+&amp;\text{Since} \ d &lt; n \\
+&amp;\implies n &gt; d &gt;&gt; \sqrt{n}
+\end{align}\]</span></p>
+<p>It is evident that <span class="math inline">\(d\)</span> should take on some value between <span class="math inline">\(n\)</span> and <span class="math inline">\(\sqrt{n}\)</span> with <span class="math inline">\(d\)</span> being closer to <span class="math inline">\(n\)</span>, particularly for non-smooth statistics. At any rate, <span class="math inline">\(j = \binom{n}{d}\)</span> will likely be a value that is not computationally feasible to obtain. As such, the number of subsamples required, <span class="math inline">\(j\)</span>, can be limited to yield the estimator more accessible. The choice of <span class="math inline">\(j\)</span> will be a multifaceted decision, where, if possible, greater values are preferred. Ideally, a small pilot study may be performed with a range of <span class="math inline">\(j\)</span> values to determine values of <span class="math inline">\(j\)</span> for which estimates begin to converge.</p>
+<p>Although not as widely applicable, researchers may consider utilizing a delete-one jackknife, as discussed in <a href="background.html#sec-del"><span>Section&nbsp;2.2.1</span></a> Given the stochastic nature of multiple imputation, especially in instances where a high proportion of missingness is present, the pseudo-estimates may vary widely between any two given jackknife subsamples, similar to what would be observed in the case of percentiles. As such, the delete-one jackknife approach is not recommended for general use but could be considered in samples with low missingness proportion.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-chen_jackknife_2001" class="csl-entry" role="doc-biblioentry">
+Chen, Jiahua, and Jun Shao. 2001. <span>“Jackknife Variance Estimation for Nearest-Neighbor Imputation.”</span> <em>Journal of the American Statistical Association</em> 96 (453): 260–69. <a href="https://doi.org/10.1198/016214501750332839">https://doi.org/10.1198/016214501750332839</a>.
+</div>
+<div id="ref-Shao_Wu_1989" class="csl-entry" role="doc-biblioentry">
+Shao, Jun, and C. F. J. Wu. 1989. <span>“A General Theory for Jackknife Variance Estimation.”</span> <em>The Annals of Statistics</em> 17 (3): 1176–97. <a href="https://doi.org/10.1214/aos/1176347263">https://doi.org/10.1214/aos/1176347263</a>.
+</div>
+<div id="ref-Wang_1998" class="csl-entry" role="doc-biblioentry">
+Wang, N. 1998. <span>“Large-Sample Theory for Parametric Multiple Imputation Procedures.”</span> <em>Biometrika</em> 85 (4): 935–48. <a href="https://doi.org/10.1093/biomet/85.4.935">https://doi.org/10.1093/biomet/85.4.935</a>.
+</div>
+</div>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./methods.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Methods</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./results.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Results</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -26,14 +26,13 @@ format:
     code-fold: true
     code-overflow: wrap
     df-print: paged
+    standalone: true
   pdf:
     toc: true
     number-sections: true
     colorlinks: false
-  docx:
-    toc: true
-    number-sections: true
-    highlight-style: github
+    standalone: true
+    keep-tex: true
     
 
 nocite: |
