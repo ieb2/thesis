@@ -2,8 +2,7 @@
 
 Per the Methods section, the performance of the proposed jackknife estimator was compared to two leading methods in the literature, Rubin's rules following multiple imputation and Bootstrap resampling prior to multiple imputation. The methods were compared concerning the coverage probabilities they generated, the widths of their respective confidence intervals, their computational expense, and the bias of their point estimators.
 
-```{r, include=FALSE}
-# Aggregated code here for organization, make it available in an appendix.
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
 library(tidyverse)
 library(ggpubr)
 
@@ -13,8 +12,8 @@ combined_results <- read_csv("final_sim_data_agg.csv") %>%
 benchmark_res <- read.csv("benchmark_detailed_res.csv") %>%
   select(-X) %>%
   group_by(expr) %>%
-  summarise("Mean Time (seconds/iteration)" = mean(time)/1e6/100, 
-            "Median Time (seconds/iteration)" = median(time)/1e6/100, 
+  summarise("Median Time (seconds/iteration)" = median(time)/1e6/100,
+            "Mean Time (seconds/iteration)" = mean(time)/1e6/100, 
             "SD of Time (seconds/iteration)" = sd(time)/1e6/100) %>%
   rename("Method" = expr)
 
@@ -148,13 +147,14 @@ In contrast, it is noted that both resampling methods examined provide nearly un
 From a point estimation perspective, the statistically desirable properties of the jackknife estimator, alongside its theoretical and empirical justification when used with small sample sizes, yield it a desirable estimator. 
 
 ### Summary of Point Estimation Properties {#sec-point}
-```{r, warning=FALSE, echo = FALSE}
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
 point_estimate_sum
 ```
 
 ### Distribution of Point Estimator Bias {#sec-dist}
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
 point_dist
 ```
 
@@ -164,13 +164,13 @@ Over-coverage of confidence intervals is noted across all methods; however, part
 
 A visual overview of the coverage probabilities may be noted in @sec-zip, where zipper plots of the methods are presented utilizing a simple random sample of 100 observations from the Monte Carlo simulation results of all methods examined. Given the small number of subsamples examined for visual clarity, the plots may not be indicative of the larger results presented above; however, they provide an appreciation for the meaning of coverage probabilities. 
 
-```{r, warning=FALSE, echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
 ci_sum
 ```
 
 ### Zipper Plots for Confidence Interval Coverage {#sec-zip}
 
-```{r}
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
 ggarrange(jackk, boot, rubin, ncol = 1, nrow = 3, common.legend = TRUE, legend="right")
 ```
 
@@ -180,11 +180,11 @@ Finally, the three methods are compared concerning their computational expenses.
 
 Despite generating the same number of subsamples $(n = 200)$, albeit in contrasting manners, with the same number of imputations $(m = 2)$ and iterations $(maxit = 5)$, it is surprising that the bootstrap approach took nearly ten times longer per iterations to provide estimates. Regardless, the significantly reduced computational expense of the jackknife estimator yields it superior to the bootstrap approach under this particular scenario. 
 
-```{r, warning=FALSE, echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
 benchmark_res_ord
 ```
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
 benchmark_plot
 ```
 

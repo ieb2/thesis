@@ -29,7 +29,7 @@ format:
   pdf:
     toc: true
     number-sections: true
-    colorlinks: true
+    colorlinks: false
   docx:
     toc: true
     number-sections: true

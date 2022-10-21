@@ -2,7 +2,7 @@
 
 A pseudocode overview of the jackknife estimator proposed may be seen in the following figure.
 
-![A pseudocode depiction of the proposed estimator.](Algorithm_for_jackknife_estimator.jpg){width="10000"}
+![A pseudocode depiction of the proposed estimator.](Algorithm_for_jackknife_estimator.jpg)
 
 Briefly, the algorithm begins by obtaining $j$ jackknife subsamples from the observed dataset with missing observations. Thereafter, each of the $j$ subsamples are imputed $m$ times, resulting in a total of $j \times m$ complete datasets. Subsequently, the analysis model of interest to estimate $\theta$ is applied to each of the completed datasets to produce $\hat{\theta^*}_1, \hat{\theta^*}_2, \hat{\theta^*}_3, \dots, \hat{\theta^*}_{n \choose d}$. The point estimate then becomes the mean of the previously produced $n$ pseudo-estimates, with the confidence interval the $\alpha/2^{th}$ and $1-\alpha/2^{th}$, respectively. 
 
