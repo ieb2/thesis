@@ -1,0 +1,1013 @@
+{
+    "sources": [
+        {
+            "author": [
+                {
+                    "family": "Rubin",
+                    "given": "Donald B"
+                }
+            ],
+            "container-title": "Proceedings of the survey research methods section of the american statistical association",
+            "id": "rubin1978multiple",
+            "issued": {
+                "date-parts": [
+                    [
+                        1978
+                    ]
+                ]
+            },
+            "page": "20-34",
+            "publisher": "American Statistical Association Alexandria, VA, USA",
+            "title": "Multiple imputations in sample surveys-a phenomenological bayesian approach to nonresponse",
+            "type": "paper-conference",
+            "volume": "1"
+        },
+        {
+            "author": [
+                {
+                    "family": "Fay",
+                    "given": "Robert E"
+                }
+            ],
+            "id": "fay1992inferences",
+            "issued": {
+                "date-parts": [
+                    [
+                        1992
+                    ]
+                ]
+            },
+            "publisher": "US Census Bureau [custodian]",
+            "title": "When are inferences from multiple imputation valid?.",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1093/biomet/85.4.935",
+            "ISSN": "0006-3444, 1464-3510",
+            "URL": "https://academic.oup.com/biomet/article-lookup/doi/10.1093/biomet/85.4.935",
+            "author": [
+                {
+                    "family": "Wang",
+                    "given": "N"
+                }
+            ],
+            "container-title": "Biometrika",
+            "id": "Wang_1998",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998,
+                        12
+                    ]
+                ]
+            },
+            "page": "935-948",
+            "title": "Large-sample theory for parametric multiple imputation procedures",
+            "type": "article-journal",
+            "volume": "85"
+        },
+        {
+            "DOI": "10.1080/01621459.1994.10476768",
+            "ISSN": "0162-1459, 1537-274X",
+            "URL": "https://www.tandfonline.com/doi/full/10.1080/01621459.1994.10476768",
+            "author": [
+                {
+                    "family": "Efron",
+                    "given": "Bradley"
+                }
+            ],
+            "container-title": "Journal of the American Statistical Association",
+            "id": "Efron_1994",
+            "issue": "426",
+            "issued": {
+                "date-parts": [
+                    [
+                        1994,
+                        6
+                    ]
+                ]
+            },
+            "page": "463-475",
+            "title": "Missing data, imputation, and the bootstrap",
+            "type": "article-journal",
+            "volume": "89"
+        },
+        {
+            "ISBN": "9781439868249",
+            "abstract": "\"Preface We are surrounded by missing data. Problems created by missing data in statistical analysis have long been swept under the carpet. These times are now slowly coming to an end. The array of techniques to deal with missing data has expanded considerably during the last decennia. This book is about one such method: multiple imputation. Multiple imputation is one of the great ideas in statistical science. The technique is simple, elegant and powerful. It is simple because it flls the holes in the data with plausible values. It is elegant because the uncertainty about the unknown data is coded in the data itself. And it is powerful because it can solve ’other’ problems that are actually missing data problems in disguise. Over the last 20 years, I have applied multiple imputation in a wide variety of projects. I believe the time is ripe for multiple imputation to enter mainstream statistics. Computers and software are now potent enough to do the required calculations with little e ort. What is still missing is a book that explains the basic ideas, and that shows how these ideas can be put to practice. My hope is that this book can ll this gap. The text assumes familiarity with basic statistical concepts and multivariate methods. The book is intended for two audiences: - (bio)statisticians, epidemiologists and methodologists in the social and health sciences; - substantive researchers who do not call themselves statisticians, but who possess the necessary skills to understand the principles and to follow the recipes. In writing this text, I have tried to avoid mathematical and technical details as far as possible. Formula’s are accompanied by a verbal statement that explains the formula in layman terms\"–",
+            "author": [
+                {
+                    "dropping-particle": "van",
+                    "family": "Buuren",
+                    "given": "Stef"
+                }
+            ],
+            "collection-title": "Chapman & hall/CRC interdisciplinary statistics series",
+            "id": "buuren_flexible_2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "keyword": "Missing observations (Statistics), Multiple imputation (Statistics), Multivariate analysis",
+            "number-of-pages": "316",
+            "publisher": "CRC Press",
+            "publisher-place": "Boca Raton, FL",
+            "title": "Flexible imputation of missing data",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1198/016214501750332839",
+            "ISSN": "0162-1459",
+            "URL": "https://doi.org/10.1198/016214501750332839",
+            "abstract": "Nearest-neighbor imputation is a popular hot deck imputation method used to compensate for nonresponse in sample surveys. Although this method has a long history of application, the problem of variance estimation after nearest-neighbor imputation has not been fully investigated. Because nearest-neighbor imputation is a nonparametric method, a nonparametric variance estimation technique, such as the jackknife, is desired. We show that the naive jackknife that treats imputed values as observed data produces serious underestimation. We also show that Rao and Shao’s adjusted jackknife, or the jackknife with each pseudoreplicate reimputed, which produces asymptotically unbiased and consistent jackknife variance estimators for other imputation methods (such as mean imputation, random hot deck imputation, and ratio or regression imputation), produces serious overestimation in the case of nearest-neighbor imputation. Two partially reimputed and a partially adjusted jackknife variance estimators are proposed and shown to be asymptotically unbiased and consistent. Some empirical results are provided to examine finite-sample properties of these jackknife variance estimators.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        11
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Chen",
+                    "given": "Jiahua"
+                },
+                {
+                    "family": "Shao",
+                    "given": "Jun"
+                }
+            ],
+            "container-title": "Journal of the American Statistical Association",
+            "id": "chen_jackknife_2001",
+            "issue": "453",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001,
+                        3,
+                        1
+                    ]
+                ]
+            },
+            "keyword": "Adjusted jackknife, Hot deck, Reimputation, Sample mean, Stratified sampling, Unbiasedness",
+            "page": "260-269",
+            "title": "Jackknife variance estimation for nearest-neighbor imputation",
+            "type": "article-journal",
+            "volume": "96"
+        },
+        {
+            "DOI": "10.1093/aje/kwaa153",
+            "ISSN": "0002-9262",
+            "PMCID": "PMC7705600",
+            "PMID": "32685964",
+            "URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7705600/",
+            "abstract": "In observational studies using routinely collected data, a variable with a high level of missingness or misclassification may determine whether an observation is included in the analysis. In settings where inclusion criteria are assessed after imputation, the popular multiple-imputation variance estimator proposed by Rubin (“Rubin’s rules” (RR)) is biased due to incompatibility between imputation and analysis models. While alternative approaches exist, most analysts are not familiar with them. Using partially validated data from a human immunodeficiency virus cohort, we illustrate the calculation of an imputation variance estimator proposed by Robins and Wang (RW) in a scenario where the study exclusion criteria are based on a variable that must be imputed. In this motivating example, the corresponding imputation variance estimate for the log odds was 29% smaller using the RW estimator than using the RR estimator. We further compared these 2 variance estimators with a simulation study which showed that coverage probabilities of 95% confidence intervals based on the RR estimator were too high and became worse as more observations were imputed and more subjects were excluded from the analysis. The RW imputation variance estimator performed much better and should be employed when there is incompatibility between imputation and analysis models. We provide analysis code to aid future analysts in implementing this method.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        10
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Giganti",
+                    "given": "Mark J"
+                },
+                {
+                    "family": "Shepherd",
+                    "given": "Bryan E"
+                }
+            ],
+            "container-title": "American Journal of Epidemiology",
+            "container-title-short": "Am J Epidemiol",
+            "id": "giganti_multiple-imputation_2020",
+            "issue": "12",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        7,
+                        20
+                    ]
+                ]
+            },
+            "page": "1628-1632",
+            "title": "Multiple-imputation variance estimation in studies with missing or misclassified inclusion criteria",
+            "type": "article-journal",
+            "volume": "189"
+        },
+        {
+            "DOI": "10.2307/2337236",
+            "ISSN": "0006-3444",
+            "URL": "https://www.jstor.org/stable/2337236",
+            "abstract": "Hot deck imputation is commonly employed for item nonresponse in sample surveys. It is also a common practice to treat the imputed values as if they are true values, and then compute the variance estimates using standard formulae. This procedure, however, could lead to serious underestimation of the true variance, when the proportion of missing values for an item is appreciable. We propose a jackknife variance estimator for stratified multistage surveys which is obtained by first adjusting the imputed values for each pseudo-replicate and then applying the standard jackknife formula. The proposed jackknife variance estimator is shown to be consistent as the sample size increases, assuming equal response probabilities within imputation classes and using a particular hot deck imputation.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        10
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Rao",
+                    "given": "J. N. K."
+                },
+                {
+                    "family": "Shao",
+                    "given": "J."
+                }
+            ],
+            "container-title": "Biometrika",
+            "id": "rao_jackknife_1992",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        1992
+                    ]
+                ]
+            },
+            "page": "811-822",
+            "title": "Jackknife variance estimation with survey data under hot deck imputation",
+            "type": "article-journal",
+            "volume": "79"
+        },
+        {
+            "DOI": "10.1080/19466315.2021.1983455",
+            "ISSN": "1946-6315",
+            "URL": "https://www.tandfonline.com/doi/full/10.1080/19466315.2021.1983455",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        7
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Bartlett",
+                    "given": "Jonathan W."
+                }
+            ],
+            "container-title": "Statistics in Biopharmaceutical Research",
+            "container-title-short": "Statistics in Biopharmaceutical Research",
+            "id": "bartlett_reference-based_2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        11,
+                        12
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "page": "1-9",
+            "title": "Reference-based multiple imputation—what is the right variance and how to estimate it",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1177/0962280220932189",
+            "ISSN": "0962-2802, 1477-0334",
+            "URL": "http://journals.sagepub.com/doi/10.1177/0962280220932189",
+            "abstract": "Multiple imputation has become one of the most popular approaches for handling missing data in statistical analyses. Part of this success is due to Rubin’s simple combination rules. These give frequentist valid inferences when the imputation and analysis procedures are so-called congenial and the embedding model is correctly specified, but otherwise may not. Roughly speaking, congeniality corresponds to whether the imputation and analysis models make different assumptions about the data. In practice, imputation models and analysis procedures are often not congenial, such that tests may not have the correct size, and confidence interval coverage deviates from the advertised level. We examine a number of recent proposals which combine bootstrapping with multiple imputation and determine which are valid under uncongeniality and model misspecification. Imputation followed by bootstrapping generally does not result in valid variance estimates under uncongeniality or misspecification, whereas certain bootstrap followed by imputation methods do. We recommend a particular computationally efficient variant of bootstrapping followed by imputation.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        7
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Bartlett",
+                    "given": "Jonathan W"
+                },
+                {
+                    "family": "Hughes",
+                    "given": "Rachael A"
+                }
+            ],
+            "container-title": "Statistical Methods in Medical Research",
+            "container-title-short": "Stat Methods Med Res",
+            "id": "bartlett_bootstrap_2020",
+            "issue": "12",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        12
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "page": "3533-3546",
+            "title": "Bootstrap inference for multiple imputation under uncongeniality and misspecification",
+            "type": "article-journal",
+            "volume": "29"
+        },
+        {
+            "DOI": "10.5705/ss.2014.067",
+            "ISSN": "10170405",
+            "URL": "http://www3.stat.sinica.edu.tw/statistica/J27N4/J27N41/J27N41-10.html",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        7
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Xianchao"
+                },
+                {
+                    "family": "Meng",
+                    "given": "Xiao-Li"
+                }
+            ],
+            "container-title": "Statistica Sinica",
+            "container-title-short": "STAT SINICA",
+            "id": "xie_dissecting_2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "title": "Dissecting multiple imputation from a multi-phase inference perspective: What happens when god’s, imputer’s and analyst’s models are uncongenial?",
+            "title-short": "Dissecting multiple imputation from a multi-phase inference perspective",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1214/ss/1177010269",
+            "ISSN": "0883-4237, 2168-8745",
+            "URL": "https://projecteuclid.org/journals/statistical-science/volume-9/issue-4/Multiple-Imputation-Inferences-with-Uncongenial-Sources-of-Input/10.1214/ss/1177010269.full",
+            "abstract": "Conducting sample surveys, imputing incomplete observations, and analyzing the resulting data are three indispensable phases of modern practice with public-use data files and with many other statistical applications. Each phase inherits different input, including the information preceding it and the intellectual assessments available, and aims to provide output that is one step closer to arriving at statistical inferences with scientific relevance. However, the role of the imputation phase has often been viewed as merely providing computational convenience for users of data. Although facilitating computation is very important, such a viewpoint ignores the imputer’s assessments and information inaccessible to the users. This view underlies the recent controversy over the validity of multiple-imputation inference when a procedure for analyzing multiply imputed data sets cannot be derived from (is \"uncongenial\" to) the model adopted for multiple imputation. Given sensible imputations and complete-data analysis procedures, inferences from standard multiple-imputation combining rules are typically superior to, and thus different from, users’ incomplete-data analyses. The latter may suffer from serious nonresponse biases because such analyses often must rely on convenient but unrealistic assumptions about the nonresponse mechanism. When it is desirable to conduct inferences under models for nonresponse other than the original imputation model, a possible alternative to recreating imputations is to incorporate appropriate importance weights into the standard combining rules. These points are reviewed and explored by simple examples and general theory, from both Bayesian and frequentist perspectives, particularly from the randomization perspective. Some convenient terms are suggested for facilitating communication among researchers from different perspectives when evaluating multiple-imputation inferences with uncongenial sources of input.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        7
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Meng",
+                    "given": "Xiao-Li"
+                }
+            ],
+            "container-title": "Statistical Science",
+            "id": "meng_multiple-imputation_1994",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        1994,
+                        11
+                    ]
+                ]
+            },
+            "keyword": "Congeniality, Normalizing constants, Randomization, importance sampling, incomplete data, missing data, nonresponse, public-use data file, self-efficiency",
+            "page": "538-558",
+            "title": "Multiple-imputation inferences with uncongenial sources of input",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rao",
+                    "given": "JNK"
+                }
+            ],
+            "container-title": "Proceedings of the second international conference on establishment surveys",
+            "id": "rao2000variance",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ]
+            },
+            "page": "599-608",
+            "title": "Variance estimation in the presence of imputation for missing data",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Arcaro",
+                    "given": "Charlie"
+                },
+                {
+                    "family": "Yung",
+                    "given": "Wesley"
+                }
+            ],
+            "container-title": "SSC annual meeting, proceedings of the survey method section",
+            "id": "arcaro2001variance",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ]
+            },
+            "page": "75-80",
+            "title": "Variance estimation in the presence of imputation",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Lee",
+                    "given": "H"
+                },
+                {
+                    "family": "Rancourt",
+                    "given": "E"
+                },
+                {
+                    "family": "Sarndal",
+                    "given": "CE"
+                }
+            ],
+            "container-title": "Proc. of the American Statist. Assoc.(Social Survey Research Methods Section)",
+            "id": "lee1995variance",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "page": "384-389",
+            "title": "Variance estimation in the presence of imputed data for the generalized estimation system",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1016/j.jmva.2014.04.010",
+            "ISSN": "0047-259X",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S0047259X14000931",
+            "abstract": "We propose jackknife empirical likelihood (EL) methods for constructing confidence intervals of mean with regression imputation that allows ignorable or nonignorable missingness. The confidence interval is constructed based on the adjusted jackknife pseudo-values (Rao and Shao, 1992). The proposed EL ratios evaluated at the true value converge to the standard chi-square distribution under both missing mechanisms for simple random sampling. Thus the EL can be applied to construct a Wilks type confidence interval without any secondary estimation. We then extend the proposed method to accommodate Poisson sampling design in survey sampling. The proposed methods are compared with some existing methods in simulation studies. We also apply the proposed method to an Italy household income panel survey data set.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        12
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Zhong",
+                    "given": "Ping-Shou"
+                },
+                {
+                    "family": "Chen",
+                    "given": "Sixia"
+                }
+            ],
+            "container-title": "Journal of Multivariate Analysis",
+            "container-title-short": "Journal of Multivariate Analysis",
+            "id": "zhong_jackknife_2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014,
+                        8,
+                        1
+                    ]
+                ]
+            },
+            "keyword": "Kernel smoothing, Missing at random, Nonignorable missing, Response mechanism, Wilks’ theorem",
+            "language": "en-US",
+            "page": "193-205",
+            "title": "Jackknife empirical likelihood inference with regression imputation and survey data",
+            "type": "article-journal",
+            "volume": "129"
+        },
+        {
+            "DOI": "10.1080/01621459.1996.10476997",
+            "ISSN": "0162-1459",
+            "URL": "https://www.tandfonline.com/doi/abs/10.1080/01621459.1996.10476997",
+            "abstract": "Most surveys use imputation to compensate for missing data. However, treating the imputed data set as the complete data set and directly applying existing methods (e.g., the linearization, the jackknife, and the bootstrap) for variance estimation and/or statistical inference does not produce valid results, because these methods do not account for the effect of missing data and/or imputation. In this article we show that correct bootstrap estimates can be obtained by imitating the process of imputing the original data set in the bootstrap resampling; that is, by imputing the bootstrap data sets in exactly the same way that the original data set is imputed. The proposed bootstrap is asymptotically valid irrespective of the sampling design, the imputation method, or the type of statistic used in inference. This enables us to use a unified method in a variety of problems, and in fact this is the only method that works without any restriction on the sampling design, the imputation method, or the type of statistic.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        12
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Shao",
+                    "given": "Jun"
+                },
+                {
+                    "family": "Sitter",
+                    "given": "Randy R."
+                }
+            ],
+            "container-title": "Journal of the American Statistical Association",
+            "id": "shao_bootstrap_1996",
+            "issue": "435",
+            "issued": {
+                "date-parts": [
+                    [
+                        1996,
+                        9,
+                        1
+                    ]
+                ]
+            },
+            "keyword": "Distribution and variance estimation, Item nonresponse, Multistage sampling, Random imputation, Ratio and regression imputation, Uniform response",
+            "page": "1278-1288",
+            "title": "Bootstrap for imputed survey data",
+            "type": "article-journal",
+            "volume": "91"
+        },
+        {
+            "DOI": "10.1177/1536867X1201200301",
+            "ISSN": "1536-867X, 1536-8734",
+            "URL": "http://journals.sagepub.com/doi/10.1177/1536867X1201200301",
+            "abstract": "Our new command midiagplots makes diagnostic plots for multiple imputations created by mi impute. The plots compare the distribution of the imputed values with that of the observed values so that problems with the imputation model can be corrected before the imputed data are analyzed. We include an example and suggest extensions to other diagnostics.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        12
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Eddings",
+                    "given": "Wesley"
+                },
+                {
+                    "family": "Marchenko",
+                    "given": "Yulia"
+                }
+            ],
+            "container-title": "The Stata Journal: Promoting communications on statistics and Stata",
+            "container-title-short": "The Stata Journal",
+            "id": "eddings_diagnostics_2012",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012,
+                        9
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "page": "353-367",
+            "title": "Diagnostics for multiple imputation in stata",
+            "type": "article-journal",
+            "volume": "12"
+        },
+        {
+            "DOI": "10.1080/01621459.1994.10476768",
+            "ISSN": "0162-1459",
+            "URL": "https://doi.org/10.1080/01621459.1994.10476768",
+            "abstract": "Missing data refers to a class of problems made difficult by the absence of some portions of a familiar data structure. For example, a regression problem might have some missing values in the predictor vectors. This article concerns nonparametric approaches to assessing the accuracy of an estimator in a missing data situation. Three main topics are discussed: bootstrap methods for missing data, these methods’ relationship to the theory of multiple imputation, and computationally efficient ways of executing them. The simplest form of nonparametric bootstrap confidence interval turns out to give convenient and accurate answers. There are interesting practical and theoretical differences between bootstrap methods and the multiple imputation approach, as well as some useful similarities.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        12
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Efron",
+                    "given": "Bradley"
+                }
+            ],
+            "container-title": "Journal of the American Statistical Association",
+            "id": "efron_missing_1994",
+            "issue": "426",
+            "issued": {
+                "date-parts": [
+                    [
+                        1994,
+                        6,
+                        1
+                    ]
+                ]
+            },
+            "keyword": "Bayesian bootstrap, Bootstrap confidence intervals, Data augmentation, Ignorable nonresponse, Nonparametric MLE",
+            "page": "463-475",
+            "title": "Missing data, imputation, and the bootstrap",
+            "type": "article-journal",
+            "volume": "89"
+        },
+        {
+            "DOI": "10.18637/jss.v045.i03",
+            "ISSN": "1548-7660",
+            "URL": "https://doi.org/10.18637/jss.v045.i03",
+            "abstract": "The R package mice imputes incomplete multivariate data by chained equations. The software mice 1.0 appeared in the year 2000 as an S-PLUS library, and in 2001 as an R package. mice 1.0 introduced predictor selection, passive imputation and automatic pooling. This article documents mice, which extends the functionality of mice 1.0 in several ways. In mice, the analysis of imputed data is made completely general, whereas the range of models under which pooling works is substantially extended. mice adds new functionality for imputing multilevel data, automatic predictor selection, data handling, post-processing imputed values, specialized pooling routines, model selection tools, and diagnostic graphs. Imputation of categorical data is improved in order to bypass problems caused by perfect prediction. Special attention is paid to transformations, sum scores, indices and interactions using passive imputation, and to the proper setup of the predictor matrix. mice can be downloaded from the Comprehensive R Archive Network. This article provides a hands-on, stepwise approach to solve applied incomplete data problems.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        12
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "dropping-particle": "van",
+                    "family": "Buuren",
+                    "given": "Stef"
+                },
+                {
+                    "family": "Groothuis-Oudshoorn",
+                    "given": "Karin"
+                }
+            ],
+            "container-title": "Journal of Statistical Software",
+            "id": "buuren_mice_2011",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011,
+                        12,
+                        12
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "page": "1-67",
+            "title": "Mice: Multivariate imputation by chained equations in r",
+            "title-short": "Mice",
+            "type": "article-journal",
+            "volume": "45"
+        },
+        {
+            "DOI": "10.1002/sim.7654",
+            "ISSN": "0277-6715",
+            "PMCID": "PMC5986623",
+            "PMID": "29682776",
+            "URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5986623/",
+            "abstract": "Many modern estimators require bootstrapping to calculate confidence intervals because either no analytic standard error is available or the distribution of the parameter of interest is non-symmetric. It remains however unclear how to obtain valid bootstrap inference when dealing with multiple imputation to address missing data. We present four methods which are intuitively appealing, easy to implement, and combine bootstrap estimation with multiple imputation. We show that three of the four approaches yield valid inference, but that the performance of the methods varies with respect to the number of imputed data sets and the extent of missingness. Simulation studies reveal the behavior of our approaches in finite samples. A topical analysis from HIV treatment research, which determines the optimal timing of antiretroviral treatment initiation in young children, demonstrates the practical implications of the four methods in a sophisticated and realistic setting. This analysis suffers from missing data and uses the g-formula for inference, a method for which no standard errors are available.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        6,
+                        12
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Schomaker",
+                    "given": "M."
+                },
+                {
+                    "family": "Heumann",
+                    "given": "C."
+                }
+            ],
+            "container-title": "Statistics in medicine",
+            "container-title-short": "Stat Med",
+            "id": "schomaker_bootstrap_2018",
+            "issue": "14",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        6,
+                        30
+                    ]
+                ]
+            },
+            "page": "2252-2266",
+            "title": "Bootstrap inference when using multiple imputation",
+            "type": "article-journal",
+            "volume": "37"
+        },
+        {
+            "DOI": "10.1177/0049124117747303",
+            "ISSN": "0049-1241, 1552-8294",
+            "URL": "http://journals.sagepub.com/doi/10.1177/0049124117747303",
+            "author": [
+                {
+                    "dropping-particle": "von",
+                    "family": "Hippel",
+                    "given": "Paul T."
+                }
+            ],
+            "container-title": "Sociological Methods & Research",
+            "id": "von_Hippel_2020",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        8
+                    ]
+                ]
+            },
+            "page": "699-718",
+            "title": "How many imputations do you need? A two-stage calculation using a quadratic rule",
+            "type": "article-journal",
+            "volume": "49"
+        },
+        {
+            "DOI": "10.1007/BF02294170",
+            "ISSN": "1860-0980",
+            "URL": "https://doi.org/10.1007/BF02294170",
+            "author": [
+                {
+                    "family": "Anderson",
+                    "given": "James C."
+                },
+                {
+                    "family": "Gerbing",
+                    "given": "David W."
+                }
+            ],
+            "container-title": "Psychometrika",
+            "id": "Anderson_Gerbing_1984",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1984,
+                        6
+                    ]
+                ]
+            },
+            "page": "155-173",
+            "title": "The effect of sampling error on convergence, improper solutions, and goodness-of-fit indices for maximum likelihood confirmatory factor analysis",
+            "type": "article-journal",
+            "volume": "49"
+        },
+        {
+            "DOI": "10.1177/0049124187016001004",
+            "ISSN": "0049-1241, 1552-8294",
+            "URL": "http://journals.sagepub.com/doi/10.1177/0049124187016001004",
+            "author": [
+                {
+                    "family": "Bentler",
+                    "given": "P. M."
+                },
+                {
+                    "family": "Chou",
+                    "given": "Chih-Ping"
+                }
+            ],
+            "container-title": "Sociological Methods & Research",
+            "id": "Bentler_Chou_1987",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1987,
+                        8
+                    ]
+                ]
+            },
+            "page": "78-117",
+            "title": "Practical issues in structural modeling",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "DOI": "10.1590/2176-9451.19.4.027-029.ebo",
+            "ISSN": "2176-9451",
+            "URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4296634/",
+            "author": [
+                {
+                    "family": "Faber",
+                    "given": "Jorge"
+                },
+                {
+                    "family": "Fonseca",
+                    "given": "Lilian Martins"
+                }
+            ],
+            "container-title": "Dental Press Journal of Orthodontics",
+            "id": "Faber_Fonseca_2014",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "page": "27-29",
+            "title": "How sample size influences research outcomes",
+            "type": "article-journal",
+            "volume": "19"
+        },
+        {
+            "DOI": "10.1207/S15328007SEM0802_3",
+            "ISSN": "1070-5511",
+            "URL": "https://doi.org/10.1207/S15328007SEM0802_3",
+            "author": [
+                {
+                    "family": "Jackson",
+                    "given": "Dennis L."
+                }
+            ],
+            "container-title": "Structural Equation Modeling: A Multidisciplinary Journal",
+            "id": "Jackson_2001",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001,
+                        4
+                    ]
+                ]
+            },
+            "page": "205-223",
+            "title": "Sample size and number of parameter estimates in maximum likelihood confirmatory factor analysis: A monte carlo investigation",
+            "title-short": "Sample size and number of parameter estimates in maximum likelihood confirmatory factor analysis",
+            "type": "article-journal",
+            "volume": "8"
+        },
+        {
+            "DOI": "10.1207/S15328007SEM1001_6",
+            "ISSN": "1070-5511",
+            "URL": "https://doi.org/10.1207/S15328007SEM1001_6",
+            "author": [
+                {
+                    "family": "Jackson",
+                    "given": "Dennis L."
+                }
+            ],
+            "container-title": "Structural Equation Modeling: A Multidisciplinary Journal",
+            "id": "Jackson_2003",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003,
+                        1
+                    ]
+                ]
+            },
+            "page": "128-141",
+            "title": "Revisiting sample size and number of parameter estimates: Some support for the n:q hypothesis",
+            "title-short": "Revisiting sample size and number of parameter estimates",
+            "type": "article-journal",
+            "volume": "10"
+        },
+        {
+            "DOI": "10.54870/1551-3440.1515",
+            "ISSN": "1551-3440",
+            "URL": "https://scholarworks.umt.edu/tme/vol18/iss1/8",
+            "author": [
+                {
+                    "family": "LaFontaine",
+                    "given": "Denise"
+                }
+            ],
+            "container-title": "The Mathematics Enthusiast",
+            "id": "LaFontaine_2021",
+            "issue": "1–2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        1
+                    ]
+                ]
+            },
+            "page": "78-99",
+            "title": "The history of bootstrapping: Tracing the development of resampling with replacement",
+            "title-short": "The history of bootstrapping",
+            "type": "article-journal",
+            "volume": "18"
+        },
+        {
+            "DOI": "10.1007/978-1-4612-2950-6",
+            "ISBN": "9780387978673",
+            "URL": "http://link.springer.com/10.1007/978-1-4612-2950-6",
+            "author": [
+                {
+                    "family": "Mammen",
+                    "given": "Enno"
+                }
+            ],
+            "collection-title": "Lecture notes in statistics",
+            "id": "Mammen_1992",
+            "issued": {
+                "date-parts": [
+                    [
+                        1992
+                    ]
+                ]
+            },
+            "publisher": "Springer New York",
+            "publisher-place": "New York, NY",
+            "title": "When does bootstrap work?",
+            "type": "book",
+            "volume": "77"
+        },
+        {
+            "DOI": "10.1214/aos/1176347263",
+            "ISSN": "0090-5364, 2168-8966",
+            "URL": "https://projecteuclid.org/journals/annals-of-statistics/volume-17/issue-3/A-General-Theory-for-Jackknife-Variance-Estimation/10.1214/aos/1176347263.full",
+            "author": [
+                {
+                    "family": "Shao",
+                    "given": "Jun"
+                },
+                {
+                    "family": "Wu",
+                    "given": "C. F. J."
+                }
+            ],
+            "container-title": "The Annals of Statistics",
+            "id": "Shao_Wu_1989",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1989,
+                        9
+                    ]
+                ]
+            },
+            "page": "1176-1197",
+            "title": "A general theory for jackknife variance estimation",
+            "type": "article-journal",
+            "volume": "17"
+        },
+        {
+            "URL": "https://mathworld.wolfram.com/",
+            "author": [
+                {
+                    "family": "Weisstein",
+                    "given": "Eric W."
+                }
+            ],
+            "genre": "Text",
+            "id": "Weisstein",
+            "title": "Smooth function",
+            "type": ""
+        },
+        {
+            "URL": "https://blogs.sas.com/content/iml/2017/06/21/jackknife-estimate-standard-error-sas.html",
+            "author": [
+                {
+                    "family": "Wicklin",
+                    "given": "Rick"
+                }
+            ],
+            "container-title": "SAS Blog",
+            "id": "wicklin_2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        6
+                    ]
+                ]
+            },
+            "title": "Jackknife estimates in SAS",
+            "type": ""
+        }
+    ],
+    "project_biblios": [
+        "references.bib"
+    ]
+}
