@@ -20,7 +20,7 @@ book:
 bibliography: references.bib
 
 format:
-  html:
+  pdf:
     theme: cosmo
     toc: true
     code-fold: true
@@ -28,6 +28,9 @@ format:
     df-print: paged
     standalone: true
     csl: ieee.csl
+    pdf-engine: pdflatex
+    latex-auto-install: true
+    
     
 nocite: |
   @Wang_1998

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ihsan E. Buker">
+
+<title>Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="thesis_pdf_optimized_files/libs/clipboard/clipboard.min.js"></script>
+<script src="thesis_pdf_optimized_files/libs/quarto-html/quarto.js"></script>
+<script src="thesis_pdf_optimized_files/libs/quarto-html/popper.min.js"></script>
+<script src="thesis_pdf_optimized_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="thesis_pdf_optimized_files/libs/quarto-html/anchor.min.js"></script>
+<link href="thesis_pdf_optimized_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="thesis_pdf_optimized_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="thesis_pdf_optimized_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="thesis_pdf_optimized_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="thesis_pdf_optimized_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Jackknife Variance Estimator for Datasets Containing Multiply Imputed Outcome Variables Under Uncongeniality: A Monte Carlo Simulation Study</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ihsan E. Buker </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    Missing data is an issue ubiquitous in many fields of science. Today, multiple imputation (MI) is one of the most commonly utilized approaches to provide valid statistical inferences in the presence of missing data. Briefly, MI fills the missing cells in the original dataset by generating a series of plausible values based on an imputation model and, thereafter, creates multiple complete versions of the original dataset. Subsequently, the analysis model is applied to each imputed dataset, and the parameters of interest are pooled to accurately reflect the loss of information caused by the missing observations. Accompanying MI is the issue of uncongeniality, which occurs when the imputation model and the analysis model make different assumptions about the data. Not long after the conception of MI, Rubin’s accompanying set of rules to pool parameter estimates from the multiply imputed datasets was shown to produce biased point estimates under uncongeniality, which led to under-coverage of confidence intervals for anti-conservative estimates of variance or over-coverage for conservative estimates. In response, certain combinations of MI and resampling methods have been proposed as robust variance estimators under uncongeniality; however, their main drawback, to this day, has been their associated computational cost. Moreover, bootstrapping, one of the most commonly utilized resampling methods alongside MI to obtain proper variance estimates, has its basis in asymptotic theory. As such, in small samples frequently encountered in biological studies, the need for a computationally efficient variance estimator with statistically desirable properties remains. In response, a jackknife variance estimator for multiply imputed outcome variables under uncongeniality for small sample sizes is proposed, which provides asymptotically unbiased point estimates with appropriate confidence interval coverage under uncongeniality. The performance of the proposed jackknife variance estimator is investigated using a Monte Carlo simulation study and compared to other methods in the literature. Accordingly, the recommendation to replace Rubin’s rules as the de facto standard in variance estimation with resampling-based robust variance estimators is made, particularly in light of the modern computational power statistical practitioners have at their disposal. Finally, an implementation of the proposed jackknife variance estimator in R is provided.
+  </div>
+</div>
+
+</header>
+
+<p>Hi</p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

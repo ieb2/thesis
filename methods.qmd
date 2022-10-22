@@ -60,4 +60,4 @@ V_{\text{total}} &= V_W + V_B + \frac{V_B}{m} \\
 
 Thereafter, the methods examined were compared concerning their point estimates, confidence intervals, and computational expense. 
 
-All analyses were be conducted using R 4.2.1 (Funny-Looking Kid). 
+All analyses were conducted using R 4.2.1 (Funny-Looking Kid). 

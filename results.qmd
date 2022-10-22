@@ -136,11 +136,6 @@ benchmark_plot <- read.csv("benchmark_detailed_res.csv") %>%
     y = "Time (seconds/iteration)"
   ) + 
   theme(axis.title.y = element_blank())
-
-options(knitr.table.format = function() {
-  if (knitr::is_latex_output())
-    "latex" else "pipe"
-})
 ```
 
 ## Point Estimates
@@ -155,7 +150,7 @@ From a point estimation perspective, the statistically desirable properties of t
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
 point_estimate_sum %>%
-  knitr::kable()
+  knitr::kable(., format = "latex", booktabs = TRUE)
 ```
 
 ### Distribution of Point Estimator Bias {#sec-dist}
@@ -172,7 +167,7 @@ A visual overview of the coverage probabilities may be noted in @sec-zip, where 
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
 ci_sum %>%
-  knitr::kable()
+  knitr::kable(., format = "latex", booktabs = TRUE)
 ```
 
 ### Zipper Plots for Confidence Interval Coverage {#sec-zip}
@@ -189,7 +184,7 @@ Despite generating the same number of subsamples $(n = 200)$, albeit in contrast
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
 benchmark_res_ord %>%
-  knitr::kable()
+  knitr::kable(., format = "latex", booktabs = TRUE)
 ```
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
